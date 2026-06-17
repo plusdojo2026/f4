@@ -8,5 +8,8 @@
 </head>
 <body>
 <h1>検索結果！</h1>
+
+<p><a href="/f4/SearchServlet">検索画面に戻る</a></p>
+
 </body>
 </html>
