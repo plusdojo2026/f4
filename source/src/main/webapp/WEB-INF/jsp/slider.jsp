@@ -14,7 +14,7 @@
             </label>
        
             <label>げんき<br>
-                <input type="text" name="g"><br>
+                <input type="text" name="g">
             </label>
         
     	<input type="submit" name="slider" value="☑">
