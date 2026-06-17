@@ -8,5 +8,9 @@
 </head>
 <body>
 
+<h1>QR画面</h1>
+
+<p><a href="/f4/HomeServlet">戻る</a></p>
+
 </body>
 </html>
