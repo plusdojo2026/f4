@@ -1,5 +1,5 @@
 package dao;
 
-public class Daliy_recordsDAO {
+public class Daily_recordsDAO {
 
 }
