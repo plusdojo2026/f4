@@ -13,7 +13,7 @@ import dto.Daily_record;
 public class Daily_recordsDAO {
 	public List<Daily_record> select(Daily_record record) {
 		Connection conn = null;
-		List<Daily_record> cardList = new ArrayList<Daily_record>();
+		List<Daily_record> recordList = new ArrayList<Daily_record>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -74,23 +74,23 @@ public class Daily_recordsDAO {
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Daily_record daily_records = new daily_records(
+				Daily_record daily_records = new Daily_record(
 						rs.getInt("user_id"), 
 						rs.getInt("character_id"),
 						rs.getInt("body"),
 						rs.getInt("mind"),
-						rs.getString("create_date"),
+						rs.getDate("create_date"),
 						rs.getString("default_screenshot"),
 						rs.getString("edit_screenshot")
 						);
-				cardList.add(daily_records);
+				recordList.add(daily_records);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			cardList = null;
+			recordList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			cardList = null;
+			recordList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -98,12 +98,12 @@ public class Daily_recordsDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					cardList = null;
+					recordList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return cardList;
+		return recordList;
 	}
 }
