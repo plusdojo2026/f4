@@ -15,7 +15,7 @@
 </div>
 
 <div>
-	<p>キャラクター</p>
+	<img src="images/fuwafuwa.png" id="fuwafuwa">
 </div>
 
 <form method="POST" action="/f4/EditServlet">
