@@ -1,1 +1,24 @@
 @charset "UTF-8";
+
+/* 全体の配置 */
+.slider-container {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* ラベルとスライダーのセット */
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 縦型スライダーの強制設定 */
+input[type=range][orient=vertical] {
+    appearance: slider-vertical; /* これが最重要 */
+    -webkit-appearance: slider-vertical; 
+    width: 30px;
+    height: 200px;
+    padding: 0 5px;
+}
