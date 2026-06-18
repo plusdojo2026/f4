@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h2>詳細画面</h2>
 </body>
 </html>
