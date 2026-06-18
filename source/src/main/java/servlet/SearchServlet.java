@@ -40,7 +40,7 @@ public class SearchServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_one.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
 		dispatcher.forward(request, response);
 	}
 
