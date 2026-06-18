@@ -59,7 +59,7 @@ mind INT,
 create_date DATE,
 default_screenshot VARCHAR(200),
 edit_screenshot VARCHAR(200),
-PRIMARY KEY(user_id,date)
+PRIMARY KEY(user_id,create_date)
 );
 
 INSERT INTO daily_records VALUES(
