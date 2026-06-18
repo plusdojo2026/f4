@@ -14,11 +14,11 @@ public class User implements Serializable {
 		this.user_name = user_name;
 	}
 
-	public String getPw() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPw(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
