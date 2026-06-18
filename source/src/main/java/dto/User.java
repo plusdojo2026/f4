@@ -43,6 +43,4 @@ public class User implements Serializable {
 		this.password = "";
 		this.qrCode = "";
 	}
-
-
 }
