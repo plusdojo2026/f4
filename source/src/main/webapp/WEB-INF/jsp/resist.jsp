@@ -4,9 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>新規登録画面</title>
 </head>
 <body>
-
+<form method="POST" action="/f4/ResistServlet">
+	<div>
+		<div>
+	    	<label>ユーザーID<br>
+			<input type="text" name="userId">
+			</label>
+		</div>
+		<div>
+			<label>パスワード<br>
+			<input type="password" name="password">
+			</label>
+		</div>
+	</div>
+	<div>
+		<input type="submit" name="resist">
+		<input type="reset" name="reset">
+	</div>
+</form>
 </body>
 </html>

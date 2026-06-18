@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ログイン結果画面</title>
 </head>
 <body>
-
+<h1>ログイン結果画面</h1>
+<h2>ログインに失敗しました....</h2>
+<p><a href="/f4/LoginServlet">戻る</a></p>
 </body>
 </html>

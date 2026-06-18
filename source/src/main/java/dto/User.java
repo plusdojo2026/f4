@@ -6,7 +6,7 @@ public class User implements Serializable {
 	private int userId;		 // 自動採番
 	private String userName; // ユーザー名（入力）
 	private String password; // パスワード（入力）
-	private String qrCode;
+	private String qrCode;	 // QRコード画像
 	public int getUserId() {
 		return userId;
 	}
