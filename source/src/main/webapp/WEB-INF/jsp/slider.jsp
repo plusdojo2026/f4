@@ -10,23 +10,19 @@
 <body>
 
 <form method="POST" action="/f4/HomeServlet">
-
     <div class="slider-container">
 
-        <div class="slider-wrapper">
+        <div class="slider-V">
             <label>げんき</label>
             <input type="range" name="genki" class="vertical-slider" min="0" max="100" value="50">
         </div>
 
-        <div class="slider-wrapper">
+        <div class="slider-V">
             <label>からだ</label>
             <input type="range" name="karada" class="vertical-slider" min="0" max="100" value="50">
         </div>
-
     </div>
-
     <button type="submit">送信</button>
-
 </form>
 
 </body>
