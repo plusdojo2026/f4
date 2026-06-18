@@ -15,7 +15,9 @@
             <!-- アルバム -->
             
             <h1>未入力画面</h1>
-            
+            <form method="POST" action="/f4/DetailServlet"> 
+            	<input type="submit" name="syousai" value="詳細">
+            </form>
             
 
 <p><a href="/f4/SearchServlet">検索画面に戻る</a></p>          
