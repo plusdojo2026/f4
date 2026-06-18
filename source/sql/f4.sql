@@ -56,7 +56,7 @@ user_id INT,
 character_id INT,
 body INT,
 mind INT,
-date DATE,
+create_date DATE,
 default_screenshot VARCHAR(200),
 edit_screenshot VARCHAR(200),
 PRIMARY KEY(user_id,date)
