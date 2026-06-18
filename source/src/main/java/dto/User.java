@@ -1,5 +1,35 @@
 package dto;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+	private String user_name; // ID
+	private String password; // パスワード
+
+	public String getUserName() {
+		return user_name;
+	}
+
+	public void setUserName(String user_name) {
+		this.user_name = user_name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public User(String user_name, String password) {
+		this.user_name = user_name;
+		this.password = password;
+	}
+
+	public User() {
+		this.user_name = "";
+		this.password = "";
+	}
 
 }
