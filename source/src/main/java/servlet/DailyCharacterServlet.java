@@ -38,13 +38,6 @@ public class DailyCharacterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		
-		// リクエストパラメータの文字コードを設定する
-		request.setCharacterEncoding("UTF-8");
-				
-		// リクエストパラメータを取得する
-		int b = Integer.parseInt(request.getParameter("b"));
-		int g = Integer.parseInt(request.getParameter("g"));
 				
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 		dispatcher.forward(request, response);
