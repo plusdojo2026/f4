@@ -13,7 +13,7 @@ body {
 }
 
 /* 各スライダー（げんき・からだ） */
-.slider-wrapper {
+.slider-V {
     display: flex;
     flex-direction: column;
     align-items: center;
