@@ -12,7 +12,7 @@
 	<h1>ホーム画面</h1>
 	
 	<c:forEach var="character" items="${characterList }">
-	<img src="${character.characterMainImg}" alt="キャラ画像" width="505.6" height="337.2">
+	<img src="${character.characterMainImg}" alt="キャラ画像" width="500" height="300">
 	</c:forEach>
 	
 	<h2>キャラクター</h2>
