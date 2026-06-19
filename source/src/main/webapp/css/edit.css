@@ -1,1 +1,10 @@
 @charset "UTF-8";
+html{
+	
+        background-image: url("../images/fuwafuwa.png");
+        background-size: cover;      /* 画面いっぱいに表示 */
+        background-position: center; /* 中央配置 */
+        background-repeat: no-repeat;
+    }
+    
+
