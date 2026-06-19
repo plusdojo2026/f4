@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>落書き｜ぱぱっとコミュ！</title>
+<link rel="stylesheet" href="css/edit.css">
 </head>
 <body>
 
@@ -15,8 +17,16 @@
 </div>
 
 <div>
-	<img src="images/fuwafuwa.png" id="fuwafuwa">
+    <canvas
+        id="canvas"
+        width="800"
+        height="600"
+        style="border:1px solid #ccc;">
+    </canvas>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/dist/signature_pad.umd.min.js"></script>
+<script src="javascript/edit.js"></script>
 
 <form method="POST" action="/f4/EditServlet">
 
