@@ -1,1 +1,97 @@
 @charset "UTF-8";
+/* 全体 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* 背景画像を入れる箱 */
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 背景画像 */
+.background {
+    width: 100%;
+    display: block;
+}
+
+/* アルバム全体 */
+.album {
+    width: 950px;
+    position: absolute;
+    top: 50%;
+    left: 49%;
+     /* 完全中央配置 */
+    /* x軸(左側)に-50% */
+    /* x軸(上)に-50% */
+    transform: translate(-50%, -50%);
+}
+
+/* アルバム画像 */
+.album-img {
+    width: 100%;
+    display: block;
+}
+
+/* 本の上に文字とフォームなどを重ねる */
+.album-contents {
+    width: 950px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 完全中央配置 */
+}
+
+/* 日付入力欄 */
+.date {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 「ここに日付を入力」 */
+.date p {
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* 入力欄 */
+.date input {
+    width: 160px;
+    height: 50px;
+    border: 1px solid #999;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Album文字 */
+.album-contents h1 {
+    color: white;
+    font-style: italic;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 40px;
+}
+
+/* 検索ボタン中央 */
+.btn {
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+/* 検索ボタン */
+.button {
+    background-color: #10b981;
+    color: white;
+    border-radius: 10px;
+    width: 90px;
+    height: 35px;
+    font-size: 14px;
+    /* border: none;  */
+}
