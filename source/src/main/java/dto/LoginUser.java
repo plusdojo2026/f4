@@ -3,7 +3,7 @@ package dto;
 import java.io.Serializable;
 
 public class LoginUser implements Serializable {
-	private String userName; // ログイン時のID
+	private String userName; // ログイン時のユーザー名
 
 	public String getUserName() {
 		return userName;
