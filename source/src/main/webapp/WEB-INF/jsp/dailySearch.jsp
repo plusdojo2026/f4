@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ぱぱっとコミュ！｜アルバム画面(検索)</title>
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/search.css">
     <!--
     <style>
         * {
@@ -18,11 +18,11 @@
     <div class="container">
 
         <!-- 背景画像 -->
-        <img src="images_back/album.png" class="background">
+        <img src="${pageContext.request.contextPath}/images_back.css/album.png" class="background">
 
         <!-- アルバム -->
         <div class="album">
-            <img src="images_back/search_one.png" class="album-img">
+            <img src="${pageContext.request.contextPath}/images_back.css/search_one.png" class="album-img">
         </div>
 
         <div class="album-contents">
