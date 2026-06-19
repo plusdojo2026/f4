@@ -25,24 +25,23 @@ character_main_img VARCHAR(200)
 );
 
 INSERT INTO characters(character_id,character_name,character_main_img) VALUES
-(1,'ふわふわ','images/fuwafuwa.png'),
-(2,'ぐるぐる','images/guruguru.png'),
-(3,'ぐったり','images/guttari.png'),
-(4,'ひきこもり','images/hikikomori.png'),
-(5,'いいかも','images/iikamo.png'),
-(6,'いらいら','images/iraira.png'),
-(7,'きらきら','images/kirakira.png'),
-(8,'まあまあ','images/maamaa.png'),
-(9,'もやもや','images/moyamoya.png'),
-(10,'おもい','images/omoi.png'),
-(11,'ぺったん','images/pettan.png'),
-(12,'るんるん','images/runnrunn.png'),
+(1,'ぺったん','images/pettan.png'),
+(2,'ぐったり','images/guttari.png'),
+(3,'ひきこもり','images/hikikomori.png'),
+(4,'うすうす','images/usuusu.png'),
+(5,'もやもや','images/moyamoya.png'),
+(6,'ふわふわ','images/fuwafuwa.png'),
+(7,'まあまあ','images/maamaa.png'),
+(8,'いいかも','images/iikamo.png'),
+(9,'うきうき','images/ukiuki.png'),
+(10,'るんるん','images/runnrunn.png'),
+(11,'わくわく','images/wakuwaku.png'),
+(12,'きらきら','images/kirakira.png'),
 (13,'そわそわ','images/sowasowa.png'),
-(14,'うきうき','images/ukiuki.png'),
-(15,'うすうす','images/usuusu.png'),
-(16,'わくわく','images/wakuwaku.png'),
-(17,'ざわざわ','images/zawazawa.png');
-
+(14,'ざわざわ','images/zawazawa.png'),
+(15,'おもい','images/omoi.png'),
+(16,'いらいら','images/iraira.png'),
+(17,'ぐるぐる','images/guruguru.png'),
 
 SELECT * FROM characters;
 
