@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/f4/SliderServlet");
 		} else { // ログイン失敗
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginresult.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginResult.jsp");
 			dispatcher.forward(request, response);
 		}
 	}
