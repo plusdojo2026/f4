@@ -98,4 +98,73 @@ public class Daily_recordsDAO {
 		// 結果を返す
 		return recordList;
 	}
+	public boolean insert(Daily_record record) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webapp2?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+
+			// SQL文を準備する
+			String sql = "INSERT INTO daily_records VALUES (?, ?, ?, ?, ?, ?, ?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setString(1, "%" + record.getUserId() + "%");
+			pStmt.setString(2, "%" + record.getCharacterId() + "%");
+		if (record.getBody() >= 0 && record.getBody() <= 100) {
+			pStmt.setString(3, "%" + record.getBody() + "%");
+		} else {
+			pStmt.setString(3, "%");
+		}
+		if (record.getMind() >= 0 && record.getMind() <= 100) {
+			pStmt.setString(4, "%" + record.getMind() + "%");
+		} else {
+			pStmt.setString(4, "%");
+		}
+		if (record.getCreateDate() != null) {
+			pStmt.setString(5, "%" + record.getCreateDate() + "%");
+		} else {
+			pStmt.setString(5, "%");
+		}
+		if (record.getDefaultScreenShot() != null) {
+			pStmt.setString(6, "%" + record.getDefaultScreenShot() + "%");
+		} else {
+			pStmt.setString(6, "%");
+		}
+		if (record.getEditScreenShot() != null) {
+			pStmt.setString(7, "%" + record.getEditScreenShot() + "%");
+		} else {
+			pStmt.setString(7, "%");
+		}
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
 }
