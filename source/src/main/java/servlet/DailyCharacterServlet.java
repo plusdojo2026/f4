@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -49,6 +50,7 @@ public class DailyCharacterServlet extends HttpServlet {
 		int kibun = Integer.parseInt(request.getParameter("kibun"));
 		
 		int characterId = 0;
+		Random rand = new Random();
 		
 		if(karada >= 70 && karada <= 100 && kibun >= 0 && kibun <= 35) {
 			characterId = 1;
@@ -79,9 +81,8 @@ public class DailyCharacterServlet extends HttpServlet {
 		}else if(karada >= 0 && karada <= 10 && kibun >= 0 && kibun <= 10) {
 			characterId = 17;
 		}else {
-			characterId = 4;
-			//characterId = 5;
-			//characterId = 6;
+			characterId = rand.nextInt(3) + 4;
+			
 		}
 		
 		
