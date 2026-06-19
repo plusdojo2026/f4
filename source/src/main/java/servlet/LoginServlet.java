@@ -40,21 +40,21 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String userName = request.getParameter("userName");
+		String userId = request.getParameter("userId");
 		String password = request.getParameter("password");
 
 		// ログイン処理を行う
 		UsersDAO iDao = new UsersDAO();
-		if (iDao.isLoginOK(new User(0,userName, password,""))) { // ログイン成功
+		if (iDao.isLoginOK(new User(userId, password,""))) { // ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("id", new LoginUser(userName));
+			session.setAttribute("id", new LoginUser(userId));
 
 			// メニューサーブレットにリダイレクトする
 			response.sendRedirect("/f4/SliderServlet");
 		} else { // ログイン失敗
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginesult.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginResult.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

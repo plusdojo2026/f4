@@ -19,7 +19,7 @@
 	<div>
 		<div>
 	    	<label>ユーザーID<br>
-			<input type="text" name="userName">
+			<input type="text" name="userId">
 			</label>
 		</div>
 		<div>

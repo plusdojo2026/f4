@@ -3,21 +3,14 @@ package dto;
 import java.io.Serializable;
 
 public class User implements Serializable {
-	private int userId;		 // 自動採番
-	private String userName; // ユーザー名（入力）
+	private String userId; // ユーザー名（入力）
 	private String password; // パスワード（入力）
 	private String qrCode;	 // QRコード画像
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 	public String getPassword() {
 		return password;
@@ -31,16 +24,15 @@ public class User implements Serializable {
 	public void setQrCode(String qrCode) {
 		this.qrCode = qrCode;
 	}
-	public User(int userId, String userName, String password, String qrCode) {
+	public User(String userId, String password, String qrCode) {
 		this.userId = userId;
-		this.userName = userName;
 		this.password = password;
 		this.qrCode = qrCode;
 	}
 	public User() {
-		this.userId = 0;
-		this.userName = "";
+		this.userId = "";
 		this.password = "";
 		this.qrCode = "";
 	}
+
 }
