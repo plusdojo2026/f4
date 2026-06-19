@@ -19,6 +19,9 @@ function toggleColor() {
     }
 }
 
+/*
 const canvas = await html2canvas(
     document.getElementById("captureArea")
 );
+*/
+
