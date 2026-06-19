@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ぱぱっとコミュ！｜アルバム画面(検索)</title>
+    <!-- ${pageContext.request.contextPath} -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/search.css">
     <!--
     <style>
