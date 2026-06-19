@@ -11,7 +11,6 @@ qr_code VARCHAR(200)
 );
 
 INSERT INTO users VALUES(
-NULL,
 'papa',
 'password',
 'url'
@@ -76,7 +75,7 @@ PRIMARY KEY(user_id,create_date)
 );
 
 INSERT INTO daily_records VALUES(
-1,
+'papa',
 1,
 80,
 30,
