@@ -18,11 +18,11 @@
     <div class="container">
 
         <!-- 背景画像 -->
-        <img src="images/carenderhaikei.png" class="background">
+        <img src="images_back/album.png" class="background">
 
         <!-- アルバム -->
         <div class="album">
-            <img src="images/album.png" class="album-img">
+            <img src="images_back/search_one.png" class="album-img">
         </div>
 
         <div class="album-contents">
