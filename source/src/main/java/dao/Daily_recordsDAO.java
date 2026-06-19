@@ -33,22 +33,14 @@ public class Daily_recordsDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (record.getUserId() != null) {
 				pStmt.setString(1, "%" + record.getUserId() + "%");
-			} else {
-				pStmt.setString(1, "%");
-			}
-			if (record.getCharacterId() != null) {
 				pStmt.setString(2, "%" + record.getCharacterId() + "%");
-			} else {
-				pStmt.setString(2, "%");
-			}
-			if (record.getBody() != null) {
+			if (record.getBody() >= 0 && record.getBody() <= 100) {
 				pStmt.setString(3, "%" + record.getBody() + "%");
 			} else {
 				pStmt.setString(3, "%");
 			}
-			if (record.getMind() != null) {
+			if (record.getMind() >= 0 && record.getMind() <= 100) {
 				pStmt.setString(4, "%" + record.getMind() + "%");
 			} else {
 				pStmt.setString(4, "%");

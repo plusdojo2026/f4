@@ -1,24 +1,46 @@
 @charset "UTF-8";
 
-/* 全体の配置 */
-.slider-container {
-    display: flex;
-    gap: 40px;
+body {
+    font-family: sans-serif;
     padding: 20px;
 }
 
-/* ラベルとスライダーのセット */
-.slider-wrapper {
+/* スライダーの親要素（並べるための設定） */
+.slider-container {
+    display: flex;
+    gap: 60px; /* 回転したスライダー同士が重ならないよう広めに設定 */
+    margin-top: 50px;
+}
+
+/* 各スライダー（げんき・からだ） */
+.slider-V {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 150px; /* 回転後の幅を考慮して確保 */
 }
 
-/* 縦型スライダーの強制設定 */
-input[type=range][orient=vertical] {
-    appearance: slider-vertical; /* これが最重要 */
-    -webkit-appearance: slider-vertical; 
-    width: 30px;
-    height: 200px;
-    padding: 0 5px;
+/* ラベル */
+label {
+    margin-bottom: 80px; /* 回転したスライダーとラベルが重ならないよう調整 */
+    font-weight: bold;
+}
+
+/* 縦スライダー */
+.vertical-slider {
+    /* 回転させる */
+    transform: rotate(-90deg);
+    
+    /* 縦向きとしてサイズ指定 */
+    width: 150px;
+    height: 8px;
+    
+    /* 重要: 回転軸を調整し、周囲の要素と重なるのを防ぐ */
+    display: block;
+}
+
+/* ボタン */
+button {
+    margin-top: 30px;
+    padding: 10px 20px;
 }
