@@ -41,7 +41,7 @@ INSERT INTO characters(character_id,character_name,character_main_img) VALUES
 (14,'ざわざわ','images/zawazawa.png'),
 (15,'おもい','images/omoi.png'),
 (16,'いらいら','images/iraira.png'),
-(17,'ぐるぐる','images/guruguru.png'),
+(17,'ぐるぐる','images/guruguru.png');
 
 SELECT * FROM characters;
 
