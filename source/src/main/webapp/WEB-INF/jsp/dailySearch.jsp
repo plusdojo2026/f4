@@ -3,25 +3,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ぱぱっとコミュ！</title>
+    <meta charset="UTF-8">
+    <title>ぱぱっとコミュ！｜アルバム画面(検索)</title>
+    <!-- ${pageContext.request.contextPath} -->
+    <link rel="stylesheet" href="/f4/css/search.css">
+    <!--
+    <style>
+        * {
+            outline: 1px solid #FF0000;
+        }
+    </style>
+    -->
 </head>
-<body>
-<div class="container">
+<body id="top">
+    <div class="container">
 
-            <!-- 背景画像 -->
-            <!-- <img src="images/carenderhaikei.png" class="background"> -->
+        <!-- 背景画像 -->
+        <img src="/f4/images_back.css/album.png" class="background">
 
-            <!-- アルバム -->
-            
-            <h1>アルバム検索画面</h1>
-            
-            <form method="POST" action="/f4/SearchServlet">                   
-	                        <p>ここに日付を入力</p>
-	                        <input type="text" placeholder="例：20XX/MM/DD">
-	                    	<h2>Album</h2>
-	                    	<input type="submit" name="kensaku" value="検索">
-			</form>           
-</div>
+        <!-- アルバム -->
+        <div class="album">
+            <img src="/f4/images_back.css/search_one.png" class="album-img">
+        </div>
+
+        <div class="album-contents">
+
+            <form action="SearchServlet" method="post">
+
+                <div class="date">
+                    <p>ここに日付を入力</p>
+                    <input type="text" name="date"
+                           placeholder="例：20XX/MM/DD">
+                </div>
+
+                <h1>Album</h1>
+
+                <div class="btn">
+                    <input type="submit" value="検索" class="button">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
 </body>
 </html>
