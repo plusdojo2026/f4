@@ -13,13 +13,13 @@
 <h1>落書き画面</h1>
 
 <div>
-	<p>ペン</p>
+	<button onclick="toggleColor()">色切替</button>
 </div>
 
 <div>
     <canvas
         id="canvas"
-        width="800"
+        width="1250"
         height="600"
         style="border:1px solid #ccc;">
     </canvas>
