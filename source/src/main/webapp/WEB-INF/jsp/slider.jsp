@@ -14,16 +14,16 @@
         <div class="slider-V">
             <label>きぶん</label>
             <div class="heart-container">
-                <div class="heart-fill" id="karada-fill"></div>
-                <input type="range" name="karada" class="vertical-slider" min="0" max="100" value="50" oninput="updateFill(this, 'karada-fill')">
+                <div class="heart-fill" id="kibun-fill"></div>
+                <input type="range" name="kibun" class="vertical-slider" min="0" max="100" value="50" oninput="updateFill(this, 'kibun-fill')">
             </div>
         </div>
 
         <div class="slider-V">
             <label>からだ</label>
             <div class="bolt-container">
-                <div class="bolt-fill" id="genki-fill"></div>
-                <input type="range" name="genki" class="vertical-slider" min="0" max="100" value="50" oninput="updateFill(this, 'genki-fill')">
+                <div class="bolt-fill" id="karada-fill"></div>
+                <input type="range" name="karada" class="vertical-slider" min="0" max="100" value="50" oninput="updateFill(this, 'karada-fill')">
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@ function updateFill(slider, fillId) {
 
 // ページ読み込み時に初期値を反映
 window.onload = function() {
-    updateFill(document.getElementsByName('genki')[0], 'genki-fill');
+    updateFill(document.getElementsByName('genki')[0], 'kibun-fill');
     updateFill(document.getElementsByName('karada')[0], 'karada-fill');
 };
 </script>
