@@ -26,11 +26,25 @@ character_name VARCHAR(100),
 character_main_img VARCHAR(200)
 );
 
-INSERT INTO characters VALUES(
-1,
-'ぺたんこ',
-'petanko.png'
-);
+INSERT INTO characters(character_id,character_name,character_main_img) VALUES
+(1,'ふわふわ','images/fuwafuwa.png'),
+(2,'ぐるぐる','images/guruguru.png'),
+(3,'ぐったり','images/guttari.png'),
+(4,'ひきこもり','images/hikikomori.png'),
+(5,'いいかも','images/iikamo.png'),
+(6,'いらいら','images/iraira.png'),
+(7,'きらきら','images/kirakira.png'),
+(8,'まあまあ','images/maamaa.png'),
+(9,'もやもや','images/moyamoya.png'),
+(10,'おもい','images/omoi.png'),
+(11,'ぺったん','images/pettan.png'),
+(12,'るんるん','images/runnrunn.png'),
+(13,'そわそわ','images/sowasowa.png'),
+(14,'うきうき','images/ukiuki.png'),
+(15,'うすうす','images/usuusu.png'),
+(16,'わくわく','images/wakuwaku.png'),
+(17,'ざわざわ','images/zawazawa.png');
+
 
 SELECT * FROM characters;
 
