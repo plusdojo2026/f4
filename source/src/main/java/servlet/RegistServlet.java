@@ -39,7 +39,7 @@ public class RegistServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/regist.jsp");
 		dispatcher.forward(request, response);
 	}
 
