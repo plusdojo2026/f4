@@ -48,11 +48,10 @@ public class SearchServlet extends HttpServlet {
 		//doGet(request, response);
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
 		request.setCharacterEncoding("UTF-8");
-		String date = request.getParameter("date");
+		String date = request.getParameter("create_date");
 		
 		Daily_recordsDAO recordDAO = new Daily_recordsDAO();
-		List<Daily_record> recordList  = recordDAO.select(new Daily_record(0, user_id, character_id, body, mind, create_date ,
-				default_screenshot,edit_screenshot));
+		List<Daily_record> recordList  = recordDAO.select(new Daily_record(date));
 		
 		if(date == null){
 			//	未入力時の結果画面に遷移		
