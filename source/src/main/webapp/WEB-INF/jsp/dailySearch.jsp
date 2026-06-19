@@ -19,11 +19,11 @@
     <div class="container">
 
         <!-- 背景画像 -->
-        <img src="/f4/images_back.css/album.png" class="background">
+        <img src="/f4/images_back/album.png" class="background">
 
         <!-- アルバム -->
         <div class="album">
-            <img src="/f4/images_back.css/search_one.png" class="album-img">
+            <img src="/f4/images_back/search_one.png" class="album-img">
         </div>
 
         <div class="album-contents">
