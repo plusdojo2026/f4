@@ -24,9 +24,9 @@ public class UsersDAO {
 					"root", "password");
 
 			// SELECT文を準備する
-			String sql = "SELECT count(*) FROM users WHERE user_name=? AND password=?";
+			String sql = "SELECT count(*) FROM users WHERE user_id=? AND password=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, user.getUserName());
+			pStmt.setString(1, user.getUserId());
 			pStmt.setString(2, user.getPassword());
 
 			// SELECT文を実行し、結果表を取得する
