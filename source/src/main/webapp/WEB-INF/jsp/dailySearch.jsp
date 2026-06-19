@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ぱぱっとコミュ！｜アルバム画面(検索)</title>
-    <link rel="stylesheet" href="css/seach.css">
+    <link rel="stylesheet" href="css/search.css">
     <!--
     <style>
         * {
