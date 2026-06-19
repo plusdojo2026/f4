@@ -5,8 +5,7 @@ SHOW DATABASES;
 USE f4;
 
 CREATE TABLE users(
-user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-user_name VARCHAR(100) NOT NULL UNIQUE,
+user_id VARCHAR(100) PRIMARY KEY,
 password VARCHAR(32) NOT NULL,
 qr_code VARCHAR(200)
 );
@@ -66,7 +65,7 @@ INSERT INTO characters_subs VALUES(
 SELECT * FROM characters_subs;
 
 CREATE TABLE daily_records(
-user_id INT,
+user_id VARCHAR(100),
 character_id INT,
 body INT,
 mind INT,
