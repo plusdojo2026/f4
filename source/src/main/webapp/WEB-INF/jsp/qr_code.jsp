@@ -11,6 +11,6 @@
 <h1>QR画面</h1>
 
 <p><a href="/f4/HomeServlet">戻る</a></p>
-<img src="" alt="qr">
+<img src="<%= request.getContextPath() %>/QrServlet" alt="QRコードの表示">
 </body>
 </html>
