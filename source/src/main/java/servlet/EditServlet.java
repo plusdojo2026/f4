@@ -1,24 +1,25 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Base64;
+import java.nio.file.StandardCopyOption;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import dao.EditDAO;
-import dto.Daily_record;
+import javax.servlet.http.Part;
 /**
  * Servlet implementation class EditServlet
  */
 @WebServlet("/EditServlet")
+@MultipartConfig
 public class EditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,53 +51,20 @@ public class EditServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		Part part = request.getPart("image");
+
+        InputStream in = part.getInputStream();
+
+        String path = getServletContext().getRealPath("/images_screenshot");
+
+        String fileName = "sample.png";
+
+        Path savePath = Paths.get(path, fileName);
+
+        Files.copy(
+                in,
+                savePath,
+                StandardCopyOption.REPLACE_EXISTING);
 		
-		
-		try {
-
-            request.setCharacterEncoding("UTF-8");
-
-            String imageData = request.getParameter("formData");
-            
-            String base64 = imageData.split(",")[1];
-
-            byte[] imageBytes = Base64.getDecoder().decode(base64);
-            
-            //保存先を取得
-            String path = getServletContext().getRealPath("/images");
-            //ファイル名
-            String fileName = "user1.png";
-            //
-            Path filePath = Paths.get(path, fileName);
-
-            Files.write(filePath, imageBytes);
-
-            //HttpSession session = request.getSession();
-
-            //LoginUser user = (LoginUser)session.getAttribute("id");
-
-            //String userId = user.getUserId();
-
-            //String saveDate = LocalDate.now().toString();
-
-            Daily_record dto = new Daily_record();
-
-            //dto.setUserId(userId);
-            //dto.setSaveDate(saveDate);
-            dto.setEditScreenShot(fileName);
-            
-            EditDAO dao = new EditDAO();
-            dao.update(dto);
-
-        } catch(Exception e) {
-
-            e.printStackTrace();
-        }
-
-		
-	    // ホーム画面にフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-		dispatcher.forward(request, response);
-				
 	}
 }
