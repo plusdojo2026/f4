@@ -3,21 +3,21 @@ package dto;
 import java.io.Serializable;
 
 public class LoginUser implements Serializable {
-	private String userName; // ログイン時のユーザー名
+	private String userId; // ログイン時のユーザー名
 
-	public String getUserName() {
-		return userName;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public LoginUser(String userName) {
-		this.userName = userName;
+	public LoginUser(String userId) {
+		this.userId = userId;
 	}
 	public LoginUser() {
-		this.userName = "";
+		this.userId = "";
 	}
 
 }

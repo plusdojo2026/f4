@@ -98,7 +98,7 @@ public class Daily_recordsDAO {
 		// 結果を返す
 		return recordList;
 	}
-	public boolean insert(Daily_record record) {
+	public boolean insert(Daily_record record, String userId) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -111,16 +111,17 @@ public class Daily_recordsDAO {
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 
-			// SQL文を準備する
-			String sql = "INSERT INTO daily_records (user_id, character_id, body, mind, create_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
+			// SQL文を準備する（character_id削除）
+			String sql = "INSERT INTO daily_records (user_id, body, mind, create_date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setInt(1, record.getUserId());
-	        pStmt.setInt(2, record.getCharacterId());
-	        pStmt.setInt(3, record.getBody());
-	        pStmt.setInt(4, record.getMind());
+			pStmt.setString(1, userId);
+			pStmt.setInt(2, record.getBody());
+			pStmt.setInt(3, record.getMind());
 	        
+			System.out.println(sql);
+			
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;

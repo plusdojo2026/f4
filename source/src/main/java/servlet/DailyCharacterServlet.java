@@ -48,39 +48,39 @@ public class DailyCharacterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		//リクエストパラメータを取得する
-		int karada = Integer.parseInt(request.getParameter("karada"));
-		int kibun = Integer.parseInt(request.getParameter("kibun"));
+		int body = Integer.parseInt(request.getParameter("body"));
+		int mind = Integer.parseInt(request.getParameter("mind"));
 		
 		int characterId = 0;
 		Random rand = new Random();
 		
-		if(karada >= 70 && karada <= 100 && kibun >= 0 && kibun <= 35) {
+		if(body >= 70 && body <= 100 && mind >= 0 && mind <= 35) {
 			characterId = 1;
-		}else if(karada >= 0 && karada <= 20 && kibun >= 30 && kibun <= 60) {
+		}else if(body >= 0 && body <= 20 && mind >= 30 && mind <= 60) {
 			characterId = 2;
-		}else if(karada >= 0 && karada <= 20 && kibun >= 15 && kibun <= 30) {
+		}else if(body >= 0 && body <= 20 && mind >= 15 && mind <= 30) {
 			characterId = 3;
-		}else if(karada >= 40 && karada <= 60 && kibun >= 40 && kibun <= 60) {
+		}else if(body >= 40 && body <= 60 && mind >= 40 && mind <= 60) {
 			characterId = 7;
-		}else if(karada >= 65 && karada <= 100 && kibun >= 35 && kibun <= 65) {
+		}else if(body >= 65 && body <= 100 && mind >= 35 && mind <= 65) {
 			characterId = 8;
-		}else if(karada >= 40 && karada <= 70 && kibun >= 85 && kibun <= 100) {
+		}else if(body >= 40 && body <= 70 && mind >= 85 && mind <= 100) {
 			characterId = 9;
-		}else if(karada >= 90 && karada <= 100 && kibun >= 90 && kibun <= 100) {
+		}else if(body >= 90 && body <= 100 && mind >= 90 && mind <= 100) {
 			characterId = 10;
-		}else if(karada >= 70 && karada <= 90 && kibun >= 70 && kibun <= 100) {
+		}else if(body >= 70 && body <= 90 && mind >= 70 && mind <= 100) {
 			characterId = 11;
-		}else if(karada >= 0 && karada <= 40 && kibun >= 85 && kibun <= 100) {
+		}else if(body >= 0 && body <= 40 && mind >= 85 && mind <= 100) {
 			characterId = 12;
-		}else if(karada >= 40 && karada <= 60 && kibun >= 15 && kibun <= 30) {
+		}else if(body >= 40 && body <= 60 && mind >= 15 && mind <= 30) {
 			characterId = 13;
-		}else if(karada >= 20 && karada <= 35 && kibun >= 20 && kibun <= 40) {
+		}else if(body >= 20 && body <= 35 && mind >= 20 && mind <= 40) {
 			characterId = 14;
-		}else if(karada >= 60 && karada <= 70 && kibun >= 10 && kibun <= 30) {
+		}else if(body >= 60 && body <= 70 && mind >= 10 && mind <= 30) {
 			characterId = 15;
-		}else if(karada >= 0 && karada <= 10 && kibun >= 20 && kibun <= 70) {
+		}else if(body >= 0 && body <= 10 && mind >= 20 && mind <= 70) {
 			characterId = 16;
-		}else if(karada >= 0 && karada <= 10 && kibun >= 0 && kibun <= 10) {
+		}else if(body >= 0 && body <= 10 && mind >= 0 && mind <= 10) {
 			characterId = 17;
 		}else {
 			characterId = rand.nextInt(3) + 4;
