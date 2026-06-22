@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
 
 import dto.LoginUser;
 
@@ -42,8 +48,40 @@ public class QrImageServlet extends HttpServlet {
 		
 		// userId取得（QRに組み込むため）
 		String userId = user.getUserId();
-		
-	}
+		userId = URLEncoder.encode(userId, "UTF-8");
 
+        try {
+        	// ベースとなるURLさを作成。qrTextで、ユーザーIDをもったものを作成。
+        	//　ローカルホストのURL。本番では変更（baseUrl)
+        	String baseUrl = "http://localhost:8080/f4";
+
+        	String qrText = baseUrl + "/HomeServlet?userId=" + userId;
+        	
+        	//　サイズの設定（任意）。
+            int size = 250;
+            BitMatrix matrix = new MultiFormatWriter().encode(
+                    qrText,
+                    BarcodeFormat.QR_CODE,
+                    size, //横サイズ
+                    size //縦サイズ
+            );
+            //　ブラウザに、画像を返す
+            response.setContentType("image/png");
+            //　キャッシュ無効化。
+            response.setHeader("Cache-Control", "no-store");
+            
+            //　QRコードの設計データ、画像形式、ブラウザへの出力先。
+            MatrixToImageWriter.writeToStream(
+                    matrix,
+                    "PNG",
+                    response.getOutputStream()
+            );
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendError(500);
+        }
+
+	}
 
 }
