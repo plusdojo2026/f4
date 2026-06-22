@@ -30,13 +30,13 @@ public class EditDAO {
 			//SQL文を完成させる
             pStmt.setString(1, dto.getEditScreenShot());
             
-            return pStmt.executeUpdate() > 0;
+            //return pStmt.executeUpdate() > 0;
 			
 			
 			// SQL文を実行する
-			//if (pStmt.executeUpdate() == 1) {
-			//	result = true;
-			//}
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
