@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.Character_subsDAO;
 import dao.CharactersDAO;
 import dto.Character;
+import dto.Character_sub; 
 /**
  * Servlet implementation class DailyCharacterServlet
  */
@@ -91,6 +93,11 @@ public class DailyCharacterServlet extends HttpServlet {
 		
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("characterList", characterList);
+		
+		Character_subsDAO subDao = new Character_subsDAO();
+		List<Character_sub> characterSubList = subDao.select(characterId);
+		
+		request.setAttribute("characterSubList",characterSubList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 		dispatcher.forward(request, response);
