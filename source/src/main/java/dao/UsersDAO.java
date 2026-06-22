@@ -58,4 +58,6 @@ public class UsersDAO {
 		// 結果を返す
 		return loginResult;
 	}
+	// 新規登録（QRはQrServletにて生成。）（ユーザーのIDと、パスワードをDBへ登録。）
+	
 }
