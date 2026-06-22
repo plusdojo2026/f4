@@ -56,7 +56,7 @@ public class SliderServlet extends HttpServlet {
 		// DAO呼び出し
 		Daily_recordsDAO dao = new Daily_recordsDAO();
 		dao.insert(record, userId);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/f4/HomeServlet");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/HomeServlet");
 		dispatcher.forward(request, response);
 		
 
