@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-
+import dao.SearchDAO;
+import dto.Daily_record;
 
 /**
  * Servlet implementation class SearchServlet
@@ -43,12 +46,29 @@ public class SearchServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
-//		request.setCharacterEncoding("UTF-8");
-		String date = request.getParameter("create_date");
-//		
-//		Daily_recordsDAO recordDAO = new Daily_recordsDAO();
-//		List<Daily_record> recordList  = recordDAO.select(new Daily_record(date));
 		
+		HttpSession session = request.getSession();
+	    if (session.getAttribute("id") == null) {
+	        response.sendRedirect("LoginServlet");
+	        return;
+	    }
+		//文字コードの設定。
+		request.setCharacterEncoding("UTF-8");
+		// ログイン中のユーザーIDを取得
+		int userId = (int) session.getAttribute("id");
+		
+		Daily_record search = new Daily_record();
+	    search.setUserId(userId);
+	    
+	    //日付（create_date）を取得する
+	    String date = request.getParameter("create_date");
+	    if (date == null) date = "";
+		SearchDAO recordDAO = new SearchDAO();
+		List<Daily_record> recordList  = recordDAO.select(date);
+		
+		request.setAttribute("recordList", recordList);
+		
+		//画面遷移の分岐
 		if(date == null){
 			//	未入力時の結果画面に遷移		
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
