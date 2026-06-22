@@ -58,6 +58,51 @@ public class UsersDAO {
 		// 結果を返す
 		return loginResult;
 	}
-	// 新規登録（QRはQrServletにて生成。）（ユーザーのIDと、パスワードをDBへ登録。）
-	
+	// 新規登録（ユーザーのIDと、パスワードをDBへ登録。）（QRはQrServletにて生成。）
+	public boolean insert(User user) {
+		Connection conn = null;
+		boolean registResult = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+
+			// INSERT文を準備する
+			String sql = "INSERT INTO users (user_id, password) VALUES (?, ?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, user.getUserId());
+			pStmt.setString(2, user.getPassword());
+
+			int count = pStmt.executeUpdate();
+
+			// 1件追加できていればTrue
+			if (count == 1) {
+				registResult = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			registResult = false;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			registResult = false;
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+					registResult = false;
+				}
+			}
+		}
+
+		// 結果を返す
+		return registResult;
+	}
 }
