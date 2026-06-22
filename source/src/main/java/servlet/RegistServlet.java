@@ -8,11 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import dao.BcDAO;
-import dto.Bc;
+import dao.UsersDAO;
 import dto.Result;
+import dto.User;
 
 /**
  * Servlet implementation class RegistServlet
@@ -47,24 +46,22 @@ public class RegistServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String company = request.getParameter("userId");
-		String department = request.getParameter("password");
+		String userId = request.getParameter("userId");
+		String password = request.getParameter("password");
 
 		// 登録処理を行う
 		UsersDAO uDao = new UsersDAO();
-		if (uDao.insert(new User(0, company, ""))) { // 登録成功
+		if (uDao.insert(new User(userId, password, ""))) { // 登録成功
 			request.setAttribute("result", new Result("新規登録成功！", "アカウントを登録しました。", "/f4/LoginServlet"));
 		} else { // 登録失敗
-			request.setAttribute("result", new Result("新規登録失敗！", "アカウントを登録できませんでした。", "/f4/ResistServlet"));
+			request.setAttribute("result", new Result("新規登録失敗！", "アカウントを登録できませんでした。", "/f4/RegistServlet"));
 		}
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registResult.jsp");
 		dispatcher.forward(request, response);
 	}
-	}
 }
+
