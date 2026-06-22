@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+
 import dto.LoginUser;
 
 /**
@@ -42,8 +47,40 @@ public class QrImageServlet extends HttpServlet {
 		
 		// userId取得（QRに組み込むため）
 		String userId = user.getUserId();
-		
-	}
 
+        try {
+        	// ベースとなるURLさを作成。qrTextで、ユーザーIDをもったものを作成。
+        	String baseUrl = request.getScheme() + "://" +
+        					 request.getServerName() + ":" +
+        					 request.getServerPort() +
+        					 request.getContextPath();
+
+        	String qrText = baseUrl + "/HomeServlet?userId=" + userId;
+
+
+            int size = 250;
+            BitMatrix matrix = new MultiFormatWriter().encode(
+                    qrText,
+                    BarcodeFormat.QR_CODE,
+                    size,
+                    size
+            );
+
+            response.setContentType("image/png");
+
+            response.setHeader("Cache-Control", "no-store");
+
+            MatrixToImageWriter.writeToStream(
+                    matrix,
+                    "PNG",
+                    response.getOutputStream()
+            );
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendError(500);
+        }
+
+	}
 
 }
