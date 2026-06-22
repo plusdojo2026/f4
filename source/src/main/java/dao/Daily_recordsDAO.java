@@ -112,45 +112,15 @@ public class Daily_recordsDAO {
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "INSERT INTO daily_records VALUES (?, null, ?, ?,CURRENT_TIMESTAMP, null,null)";
+			String sql = "INSERT INTO daily_records (user_id, character_id, body, mind, create_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (record.getUserId() != null) {
-			pStmt.setString(1, record.getUserId());
-			} else {
-			pStmt.setString(1, "");
-			}
-			if (record.getCharacterId() != null) {
-			pStmt.setString(2, record.getCharacterId());
-			} else {
-			pStmt.setString(2, "");
-			}
-			if (record.getBody() != null) {
-			pStmt.setString(3, record.getBody());
-			} else {
-			pStmt.setString(3, "");
-			}
-			if (record.getMind() != null) {
-			pStmt.setString(4, record.getMind());
-			} else {
-			pStmt.setString(4, "");
-			}
-			if (record.getCreateDate() != null) {
-			pStmt.setString(5, record.getCreateDate());
-			} else {
-			pStmt.setString(5, "");
-			}
-			if (record.getDefaultScreenShot() != null) {
-			pStmt.setString(6, record.getDefaultScreenShot());
-			} else {
-			pStmt.setString(6, "");
-			}
-			if (record.getEditScreenShot() != null) {
-			pStmt.setString(7, record.getEditScreenShot());
-			} else {
-			pStmt.setString(7, "");
-			}
+			pStmt.setInt(1, record.getUserId());
+	        pStmt.setInt(2, record.getCharacterId());
+	        pStmt.setInt(3, record.getBody());
+	        pStmt.setInt(4, record.getMind());
+	        
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
@@ -173,5 +143,5 @@ public class Daily_recordsDAO {
 		// 結果を返す
 		return result;
 	}
-
 }
+

@@ -25,7 +25,7 @@ public class CharactersDAO {
 					"root", "password");
 			
 			// SQL文を準備する
-			String sql = "SELECT * "
+			String sql = "SELECT character_id,character_name,character_main_img "
 					+ "FROM characters "
 					+ "WHERE character_id = ?";
 			
