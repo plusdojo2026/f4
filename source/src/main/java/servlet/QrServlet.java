@@ -32,6 +32,7 @@ public class QrServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/qr_code.jsp");
 		dispatcher.forward(request, response);
+		
 	}
 
 	/**
