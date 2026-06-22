@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.EditDAO;
+import dto.Daily_record;
 /**
  * Servlet implementation class EditServlet
  */
@@ -45,10 +47,39 @@ public class EditServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		        // ホーム画面にフォワードする
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-				dispatcher.forward(request, response);
+		
+		try {
+
+            request.setCharacterEncoding("UTF-8");
+
+            String imageData = request.getParameter("formData");
+
+            //HttpSession session = request.getSession();
+
+            //LoginUser user = (LoginUser)session.getAttribute("id");
+
+            //String userId = user.getUserId();
+
+            //String saveDate = LocalDate.now().toString();
+
+            Daily_record dto = new Daily_record();
+
+            //dto.setUserId(userId);
+            //dto.setSaveDate(saveDate);
+            dto.setEditScreenShot(imageData);
+            
+            EditDAO dao = new EditDAO();
+            dao.update(dto);
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+        }
+
+		
+	    // ホーム画面にフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+		dispatcher.forward(request, response);
 				
 	}
-
 }
