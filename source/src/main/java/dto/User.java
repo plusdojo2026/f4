@@ -24,6 +24,11 @@ public class User implements Serializable {
 	public void setQrCode(String qrCode) {
 		this.qrCode = qrCode;
 	}
+	public User(String userId, String password) {
+		this.userId = userId;
+		this.password = password;
+		this.qrCode = "";
+	}
 	public User(String userId, String password, String qrCode) {
 		this.userId = userId;
 		this.password = password;
