@@ -74,4 +74,9 @@ public class Daily_record implements Serializable {
 		this.defaultScreenShot = "";
 		this.editScreenShot = "";
 	}
+	
+	//松野追加
+	public Daily_record(Date createDate) {
+		this.createDate=createDate;
+	}
 }

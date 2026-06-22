@@ -20,48 +20,48 @@ public class SearchDAO {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webapp2?"
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
-					"root", "password");
+					"root", "AkSak109075");
 
 			// SQL文を準備する
-			String sql = "SELECT user_id, character_id, body, mind, create_date, "
-					+ "default_screenshot, edit_screenshot "
+			String sql = "SELECT user_id,create_date "
 					+ "FROM daily_records "
 					+ "WHERE user_id =? "
-					+ "AND create_date LIKE ? OR ? IS NULL";
+					+ "AND create_date=?";
+//					+ "AND create_date LIKE ? OR ? IS NULL";
 //					+ "WHERE user_id =? AND character_id =? AND body =? "
 //					+ "AND mind =? AND create_date LIKE ? AND default_screenshot LIKE ? AND edit_screenshot LIKE ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 				pStmt.setString(1, "%" + record.getUserId() + "%");
-				pStmt.setString(2, "%" + record.getCharacterId() + "%");
-			if (record.getBody() >= 0 && record.getBody() <= 100) {
-				pStmt.setString(3, "%" + record.getBody() + "%");
-			} else {
-				pStmt.setString(3, "%");
-			}
-			if (record.getMind() >= 0 && record.getMind() <= 100) {
-				pStmt.setString(4, "%" + record.getMind() + "%");
-			} else {
-				pStmt.setString(4, "%");
-			}
+//				pStmt.setString(2, "%" + record.getCharacterId() + "%");
+//			if (record.getBody() >= 0 && record.getBody() <= 100) {
+//				pStmt.setString(3, "%" + record.getBody() + "%");
+//			} else {
+//				pStmt.setString(3, "%");
+//			}
+//			if (record.getMind() >= 0 && record.getMind() <= 100) {
+//				pStmt.setString(4, "%" + record.getMind() + "%");
+//			} else {
+//				pStmt.setString(4, "%");
+//			}
 			if (record.getCreateDate() != null) {
-				pStmt.setString(5, "%" + record.getCreateDate() + "%");
+				pStmt.setString(2, "%" + record.getCreateDate() + "%");
 			} else {
-				pStmt.setString(5, "%");
+				pStmt.setString(2, "%");
 			}
-			if (record.getDefaultScreenShot() != null) {
-				pStmt.setString(6, "%" + record.getDefaultScreenShot() + "%");
-			} else {
-				pStmt.setString(6, "%");
-			}
-			if (record.getEditScreenShot() != null) {
-				pStmt.setString(7, "%" + record.getEditScreenShot() + "%");
-			} else {
-				pStmt.setString(7, "%");
-			}
+//			if (record.getDefaultScreenShot() != null) {
+//				pStmt.setString(6, "%" + record.getDefaultScreenShot() + "%");
+//			} else {
+//				pStmt.setString(6, "%");
+//			}
+//			if (record.getEditScreenShot() != null) {
+//				pStmt.setString(7, "%" + record.getEditScreenShot() + "%");
+//			} else {
+//				pStmt.setString(7, "%");
+//			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();

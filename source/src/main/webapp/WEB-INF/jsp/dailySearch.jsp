@@ -28,12 +28,12 @@
 
         <div class="album-contents">
 
-            <form action="SearchServlet" method="post">
+            <form action="/f4/SearchServlet" method="post">
 
                 <div class="date">
                     <p>ここに日付を入力</p>
-                    <input type="text" name="date"
-                           placeholder="例：20XX/MM/DD">
+                    <input type="date" name="create_date"
+                           placeholder="例：20XX-MM-DD">
                 </div>
 
                 <h1>Album</h1>

@@ -48,23 +48,31 @@ public class SearchServlet extends HttpServlet {
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
 		
 		HttpSession session = request.getSession();
-	    if (session.getAttribute("id") == null) {
-	        response.sendRedirect("LoginServlet");
-	        return;
-	    }
+//	    if (session.getAttribute("id") == null) {
+//	        response.sendRedirect("LoginServlet");
+//	        return;
+//	    }
 		//文字コードの設定。
 		request.setCharacterEncoding("UTF-8");
 		// ログイン中のユーザーIDを取得
-		int userId = (int) session.getAttribute("id");
+//		int userId = (int) session.getAttribute("id");
+		int userId = 1;
+		
 		
 		Daily_record search = new Daily_record();
-	    search.setUserId(userId);
+		search.setUserId(userId);
+	    
+		String date = request.getParameter("create_date");
+		if (date != null || !date.isEmpty()) {
+		    search.setCreateDate(java.sql.Date.valueOf(date));
+		}
 	    
 	    //日付（create_date）を取得する
-	    String date = request.getParameter("create_date");
-	    if (date == null) date = "";
+//	    java.sql.Date date = java.sql.Date.valueOf(request.getParameter("create_date"));
+	    //if (date == null) date = "";
 		SearchDAO recordDAO = new SearchDAO();
-		List<Daily_record> recordList  = recordDAO.select(date);
+		List<Daily_record> recordList  = recordDAO.select(search);
+//		List<Daily_record> recordList  = recordDAO.select(new Daily_record(date));
 		
 		request.setAttribute("recordList", recordList);
 		

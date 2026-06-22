@@ -13,6 +13,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/plusdojo2026/f4/source/src/main/webapp/WEB-INF/lib/core-3.5.3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
