@@ -69,7 +69,8 @@ public class QrImageServlet extends HttpServlet {
             response.setContentType("image/png");
             //　キャッシュ無効化。
             response.setHeader("Cache-Control", "no-store");
-
+            
+            //　QRコードの設計データ、画像形式、ブラウザへの出力先。
             MatrixToImageWriter.writeToStream(
                     matrix,
                     "PNG",
