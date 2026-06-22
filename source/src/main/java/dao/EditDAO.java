@@ -23,7 +23,7 @@ public class EditDAO {
 					"root", "password");
 
 			// SQL文を準備する 
-			String sql ="UPDATE daily_records SET edit_screenshot = ? WHERE user_id = 2";
+			String sql ="UPDATE daily_records SET edit_screenshot = ?";
 			
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
