@@ -67,8 +67,8 @@ public class EditServlet extends HttpServlet {
                 StandardCopyOption.REPLACE_EXISTING);
         
         // ホーム画面にフォワードする
-     	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-     	dispatcher.forward(request, response);
+     	//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+     	//dispatcher.forward(request, response);
 		
 	}
 }
