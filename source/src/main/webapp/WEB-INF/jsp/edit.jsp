@@ -29,11 +29,12 @@
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="javascript/edit.js"></script>
 
+<button onclick="saveScreenshot()">保存</button>
+
+<!--  
 <form method="POST" action="/f4/EditServlet">
-
 	<input type="submit" name="screenshot" value="保存">
-
 </form>
-
+-->
 </body>
 </html>
