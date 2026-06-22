@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.Daily_recordsDAO;
+import dto.Daily_record;
 
 /**
  * Servlet implementation class SliderServlet
@@ -40,8 +44,21 @@ public class SliderServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-		//dispatcher.forward(request, response);
+		HttpSession session = request.getSession();
+		String userId = (String) session.getAttribute("user_id");
+
+		int body = Integer.parseInt(request.getParameter("body"));
+		int mind = Integer.parseInt(request.getParameter("mind"));
+		
+		Daily_record record = new Daily_record();
+		record.setBody(body);
+		record.setMind(mind);
+		// DAO呼び出し
+		Daily_recordsDAO dao = new Daily_recordsDAO();
+		dao.insert(record, userId);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/f4/HomeServlet");
+		dispatcher.forward(request, response);
+		
 
 	}
 
