@@ -7,7 +7,7 @@
 <title>新規登録画面</title>
 </head>
 <body>
-<form method="POST" action="/f4/ResistServlet">
+<form method="POST" action="/f4/RegistServlet">
 	<div>
 		<div>
 	    	<label>ユーザーID<br>
@@ -21,8 +21,8 @@
 		</div>
 	</div>
 	<div>
-		<input type="submit" name="resist">
-		<input type="reset" name="reset">
+		<input type="submit" value="登録">
+		<input type="reset" value="リセット">
 	</div>
 </form>
 </body>
