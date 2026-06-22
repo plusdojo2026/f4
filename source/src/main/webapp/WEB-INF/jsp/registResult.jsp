@@ -7,8 +7,9 @@
 <title>新規登録結果画面</title>
 </head>
 <body>
-<h1>新規登録結果画面</h1>
-<h2>新規登録に失敗しました....</h2>
-<p><a href="/f4/ResistServlet">戻る</a></p>
+<h1><c:out value="${result.title}" /></h1>
+<hr>
+<p><c:out value="${result.message}" /></p>
+<a href="${result.backTo}">新規登録画面へ戻る</a>
 </body>
 </html>
