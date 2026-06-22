@@ -28,8 +28,10 @@ public class SearchDAO {
 			String sql = "SELECT user_id, character_id, body, mind, create_date, "
 					+ "default_screenshot, edit_screenshot "
 					+ "FROM daily_records "
-					+ "WHERE user_id =? AND character_id =? AND body =? "
-					+ "AND mind =? AND create_date LIKE ? AND default_screenshot LIKE ? AND edit_screenshot LIKE ? ";
+					+ "WHERE user_id =? "
+					+ "AND create_date LIKE ? OR ? IS NULL";
+//					+ "WHERE user_id =? AND character_id =? AND body =? "
+//					+ "AND mind =? AND create_date LIKE ? AND default_screenshot LIKE ? AND edit_screenshot LIKE ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
