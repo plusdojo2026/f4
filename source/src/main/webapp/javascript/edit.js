@@ -16,7 +16,33 @@ function toggleColor() {
     }
 }
 
+/*eclipse*/
+function saveScreenshot() {
 
+    html2canvas(document.getElementById("captureArea"))
+        .then(function(screenshot) {
+        
+        	screenshot.toBlob(function(blob) {
+
+            const formData = new FormData();
+
+            formData.append(
+                "image",
+                blob,
+                "screenshot.png"
+            );
+
+            fetch("EditServlet", {
+                method: "POST",
+                body: formData
+            });
+
+            });
+
+        });
+}
+
+/* base64データベース保存
 function saveScreenshot() {
 
     html2canvas(document.getElementById("captureArea"))
@@ -35,8 +61,9 @@ function saveScreenshot() {
 
         });
 }
+*/
 
-/*
+/* 旧
    function saveScreenshot() {  
 
     const screenshot = html2canvas(document.getElementById("captureArea")); 
