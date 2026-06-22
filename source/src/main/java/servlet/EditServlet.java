@@ -55,7 +55,8 @@ public class EditServlet extends HttpServlet {
 
         InputStream in = part.getInputStream();
 
-        String path = getServletContext().getRealPath("/images_screenshot");
+        //String path = getServletContext().getRealPath("/images_screenshot");
+        String path = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
 
         String fileName = "sample.png";
 
@@ -67,8 +68,8 @@ public class EditServlet extends HttpServlet {
                 StandardCopyOption.REPLACE_EXISTING);
         
         // ホーム画面にフォワードする
-     	//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-     	//dispatcher.forward(request, response);
+     	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+     	dispatcher.forward(request, response);
 		
 	}
 }
