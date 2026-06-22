@@ -54,7 +54,7 @@ function saveScreenshot() {
 
             formData.append("image", imageData);
 
-            fetch("EditServlet", {
+            fetch("/f4/EditServlet", {
                 method: "POST",
                 body: formData
             });
