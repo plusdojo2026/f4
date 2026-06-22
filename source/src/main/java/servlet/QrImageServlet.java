@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -47,27 +48,26 @@ public class QrImageServlet extends HttpServlet {
 		
 		// userId取得（QRに組み込むため）
 		String userId = user.getUserId();
+		userId = URLEncoder.encode(userId, "UTF-8");
 
         try {
         	// ベースとなるURLさを作成。qrTextで、ユーザーIDをもったものを作成。
-        	String baseUrl = request.getScheme() + "://" +
-        					 request.getServerName() + ":" +
-        					 request.getServerPort() +
-        					 request.getContextPath();
+        	//　ローカルホストのURL。本番では変更（baseUrl)
+        	String baseUrl = "http://localhost:8080/f4";
 
         	String qrText = baseUrl + "/HomeServlet?userId=" + userId;
-
-
+        	
+        	//　サイズの設定（任意）。
             int size = 250;
             BitMatrix matrix = new MultiFormatWriter().encode(
                     qrText,
                     BarcodeFormat.QR_CODE,
-                    size,
-                    size
+                    size, //横サイズ
+                    size //縦サイズ
             );
-
+            //　ブラウザに、画像を返す
             response.setContentType("image/png");
-
+            //　キャッシュ無効化。
             response.setHeader("Cache-Control", "no-store");
 
             MatrixToImageWriter.writeToStream(
