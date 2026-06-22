@@ -76,7 +76,7 @@ public class QrImageServlet extends HttpServlet {
                     "PNG",
                     response.getOutputStream()
             );
-
+            System.out.println("QR URL: " + qrText);
         } catch (Exception e) {
             e.printStackTrace();
             response.sendError(500);
