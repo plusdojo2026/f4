@@ -16,7 +16,7 @@
 	<button onclick="toggleColor()">色切替</button>
 </div>
 
-<div>
+<div id="captureArea">
     <canvas
         id="canvas"
         width="1250"
@@ -26,6 +26,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/dist/signature_pad.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="javascript/edit.js"></script>
 
 <form method="POST" action="/f4/EditServlet">

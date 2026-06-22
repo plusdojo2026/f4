@@ -1,7 +1,4 @@
-/**
- * 
- */
- 
+
 const canvas = document.getElementById("canvas");
 
 const signaturePad = new SignaturePad(canvas);
@@ -19,9 +16,42 @@ function toggleColor() {
     }
 }
 
-/*
-const canvas = await html2canvas(
-    document.getElementById("captureArea")
-);
-*/
 
+function saveScreenshot() {
+
+    html2canvas(document.getElementById("captureArea"))
+        .then(function(screenshot) {
+
+            const imageData = screenshot.toDataURL("image/png");
+
+            const formData = new FormData();
+
+            formData.append("image", imageData);
+
+            fetch("EditServlet", {
+                method: "POST",
+                body: formData
+            });
+
+        });
+}
+
+/*
+   function saveScreenshot() {  
+
+    const screenshot = html2canvas(document.getElementById("captureArea")); 
+
+    const imageData = screenshot.toDataURL("image/png");
+    
+    const formData = new FormData();
+    
+    formData.append("image", imageData);
+
+	fetch("EditServlet", 
+		{
+    	method: "POST",
+    	body: formData
+    	}
+	);
+}
+*/
