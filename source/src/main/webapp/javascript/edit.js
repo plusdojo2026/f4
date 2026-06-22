@@ -16,7 +16,21 @@ function toggleColor() {
     }
 }
 
-/*eclipse*/
+
+async function saveScreenshot() {
+
+    const screenshot = await html2canvas(document.getElementById("captureArea"));
+
+    const imageData = screenshot.toDataURL("image/png");
+
+    document.getElementById("imageData").value = imageData;
+
+    document.getElementById("editForm").submit();
+}
+
+
+
+/*eclipse
 function saveScreenshot() {
 
     html2canvas(document.getElementById("captureArea"))
@@ -32,7 +46,7 @@ function saveScreenshot() {
                 "screenshot.png"
             );
 
-            fetch("EditServlet", {
+            fetch("/f4/EditServlet", {
                 method: "POST",
                 body: formData
             });
@@ -41,6 +55,8 @@ function saveScreenshot() {
 
         });
 }
+*/
+
 
 /* base64データベース保存
 function saveScreenshot() {
@@ -62,6 +78,7 @@ function saveScreenshot() {
         });
 }
 */
+
 
 /* 旧
    function saveScreenshot() {  
