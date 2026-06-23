@@ -23,4 +23,5 @@ form {
 	align-items: center;/* 左右の中央揃え */
 	justify-content: center;/* 上下の中央揃え */
 	min-height: 100vh;/* 画面の高さ(100vh)分を確保 */
+	gap: 8px;
 }
