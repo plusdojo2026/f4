@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -51,14 +53,19 @@ public class EditServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+	
+		//西暦年月日
+		String date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		
 		Part part = request.getPart("image");
 
         InputStream in = part.getInputStream();
-
-        //String path = getServletContext().getRealPath("/images_screenshot");
+        
+        //保存先を取得
         String path = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
-
-        String fileName = "sample2.png";
+        
+        //ファイルの名前を指定
+        String fileName = date + ".png";
         System.out.println("sample2で保存します");
 
         Path savePath = Paths.get(path, fileName);
@@ -68,6 +75,8 @@ public class EditServlet extends HttpServlet {
                 savePath,
                 StandardCopyOption.REPLACE_EXISTING);
         
+        
+
         // ホーム画面にフォワードする
      	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
      	dispatcher.forward(request, response);
