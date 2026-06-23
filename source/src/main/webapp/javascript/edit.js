@@ -16,7 +16,7 @@ function toggleColor() {
     }
 }
 
-
+/*
 async function saveScreenshot() {
 
     const screenshot = await html2canvas(document.getElementById("captureArea"));
@@ -27,7 +27,7 @@ async function saveScreenshot() {
 
     document.getElementById("editForm").submit();
 }
-
+*/
 
 
 /*eclipse
