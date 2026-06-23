@@ -64,9 +64,10 @@ public class Daily_record implements Serializable {
 		this.defaultScreenShot = defaultScreenShot;
 		this.editScreenShot = editScreenShot;
 	}
+	
 	public Daily_record() {
 		super();
-		this.userId =" ";
+		this.userId = "";
 		this.characterId = 0;
 		this.body = 0;
 		this.mind = 0;
@@ -79,4 +80,7 @@ public class Daily_record implements Serializable {
 	public Daily_record(Date createDate) {
 		this.createDate=createDate;
 	}
+	
 }
+
+

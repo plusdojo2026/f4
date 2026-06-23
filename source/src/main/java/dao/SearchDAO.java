@@ -11,7 +11,7 @@ import java.util.List;
 import dto.Daily_record;
 
 public class SearchDAO {
-	public List<Daily_record> select(Daily_record record) {
+	public List<Daily_record> select(Daily_record record, String userId) {
 		Connection conn = null;
 		List<Daily_record> recordList = new ArrayList<Daily_record>();
 
@@ -22,7 +22,7 @@ public class SearchDAO {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
-					"root", "AkSak109075");
+					"root", "password");
 
 			// SQL文を準備する
 			String sql = "SELECT user_id,create_date "
@@ -35,7 +35,7 @@ public class SearchDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-				pStmt.setString(1, "%" + record.getUserId() + "%");
+				pStmt.setString(1, userId);
 //				pStmt.setString(2, "%" + record.getCharacterId() + "%");
 //			if (record.getBody() >= 0 && record.getBody() <= 100) {
 //				pStmt.setString(3, "%" + record.getBody() + "%");
@@ -69,7 +69,7 @@ public class SearchDAO {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				Daily_record daily_records = new Daily_record(
-						rs.getInt("user_id"), 
+						rs.getString("user_id"), 
 						rs.getInt("character_id"),
 						rs.getInt("body"),
 						rs.getInt("mind"),

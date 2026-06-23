@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.SearchDAO;
 import dto.Daily_record;
+import dto.LoginUser;
 
 /**
  * Servlet implementation class SearchServlet
@@ -48,22 +49,24 @@ public class SearchServlet extends HttpServlet {
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
 		
 		HttpSession session = request.getSession();
-//	    if (session.getAttribute("id") == null) {
-//	        response.sendRedirect("LoginServlet");
-//	        return;
-//	    }
+		LoginUser user = (LoginUser) session.getAttribute("id");
+		if (user == null) {
+			response.sendRedirect(request.getContextPath() + "/LoginServlet");
+			return;
+		}
 		//文字コードの設定。
 		request.setCharacterEncoding("UTF-8");
 		// ログイン中のユーザーIDを取得
 //		int userId = (int) session.getAttribute("id");
-		int userId = 1;
+//		int userId = 1;
 		
 		
 		Daily_record search = new Daily_record();
-		search.setUserId(userId);
+		String userId = user.getUserId();
 	    
 		String date = request.getParameter("create_date");
-		if (date != null || !date.isEmpty()) {
+		//deteがnullでもなく空文字でもない(入力時)
+		if (date != null && !date.isEmpty()) {
 		    search.setCreateDate(java.sql.Date.valueOf(date));
 		}
 	    
@@ -71,13 +74,14 @@ public class SearchServlet extends HttpServlet {
 //	    java.sql.Date date = java.sql.Date.valueOf(request.getParameter("create_date"));
 	    //if (date == null) date = "";
 		SearchDAO recordDAO = new SearchDAO();
-		List<Daily_record> recordList  = recordDAO.select(search);
+		List<Daily_record> recordList  = recordDAO.select(search,userId);
 //		List<Daily_record> recordList  = recordDAO.select(new Daily_record(date));
 		
 		request.setAttribute("recordList", recordList);
 		
 		//画面遷移の分岐
-		if(date == null){
+		//deteがnullまたは空文字(未入力)
+		if(date == null || date.isEmpty()){
 			//	未入力時の結果画面に遷移		
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
 			dispatcher.forward(request, response);
