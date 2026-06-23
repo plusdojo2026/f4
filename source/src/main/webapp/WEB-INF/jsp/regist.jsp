@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>新規登録画面</title>
+<link rel="stylesheet" href="css/regist.css">
 </head>
 <body>
 <form method="POST" action="/f4/RegistServlet">
