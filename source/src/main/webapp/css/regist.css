@@ -10,3 +10,17 @@ body {
 	background-repeat: no-repeat; /* 繰り返さない */
 	background-attachment: fixed; /* スクロールしても動かない */
 }
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+/* 2. form を画面全体に広げる */
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;/* 左右の中央揃え */
+	justify-content: center;/* 上下の中央揃え */
+	min-height: 100vh;/* 画面の高さ(100vh)分を確保 */
+}
