@@ -106,18 +106,8 @@ public class EditServlet extends HttpServlet {
 
             request.setCharacterEncoding("UTF-8");
 
-            //HttpSession session = request.getSession();
-
-            //LoginUser user = (LoginUser)session.getAttribute("id");
-
-            //String userId = user.getUserId();
-
-            //String saveDate = LocalDate.now().toString();
-
             Daily_record dto = new Daily_record();
 
-            //dto.setUserId(userId);
-            //dto.setSaveDate(saveDate);
             dto.setEditScreenShot(fileName);
             
             EditDAO dao = new EditDAO();
@@ -130,8 +120,8 @@ public class EditServlet extends HttpServlet {
 
 		
 	    // ホーム画面にフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-		dispatcher.forward(request, response);
+		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+		//dispatcher.forward(request, response);
 				
 	}
 }

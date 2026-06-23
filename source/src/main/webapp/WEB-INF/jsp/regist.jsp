@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/regist.css">
 </head>
 <body>
+<h1>新規登録</h1>
 <form method="POST" action="/f4/RegistServlet">
 	<div>
 		<div>
@@ -21,9 +22,9 @@
 			</label>
 		</div>
 	</div>
-	<div>
-		<input type="submit" value="登録">
-		<input type="reset" value="リセット">
+	<div class="button-group">
+		<input type="submit" name="tou" value="登録">
+		<input type="reset" name="reset" value="リセット">
 	</div>
 </form>
 </body>
