@@ -10,18 +10,72 @@ body {
 	background-repeat: no-repeat; /* 繰り返さない */
 	background-attachment: fixed; /* スクロールしても動かない */
 }
-
+h1 {
+    text-align: center;
+    background-color: #CBE2FE;
+}
 html, body {
 	height: 100%;
 	margin: 0;
 }
-
+label {
+    color: black;             /* 文字色：濃いグレー */
+    background-color: #f0f0f0; /* 背景色：薄いグレー */
+    padding: 8px 12px;       /* 内側の余白 */
+    border-radius: 5px;      /* 角を丸くする */
+    display: inline-block;   /* 背景色を文字の幅に合わせる */
+    margin-bottom: 5px;      /* 下の入力欄との間隔 */
+    font-weight: bold;       /* 太字にして見やすく */
+}
+div{
+    text-align: center;
+}
+/* 入力欄全体（div）の装飾 */
+form div {
+    margin-bottom: 15px;     /* 項目同士の隙間を空ける */
+}
 /* 2. form を画面全体に広げる */
 form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;/* 左右の中央揃え */
 	justify-content: center;/* 上下の中央揃え */
-	min-height: 100vh;/* 画面の高さ(100vh)分を確保 */
-	gap: 8px;
+	
+	min-height: 50vh;/* 画面の高さ(100vh)分を確保 */
+	
+}
+.button-group {
+    margin-top: 20px; /* 上との間隔を大きく取る */
+    display: flex;
+    justify-content: center; /* ボタンを横並びで中央寄せ */
+    gap: 20px;               /* ボタン同士の間に隙間を空ける */
+}
+
+/* ボタン共通の装飾 */
+.button-group input {
+    padding: 10px 25px;      /* ボタンを大きくする */
+    font-size: 16px;         /* 文字サイズを読みやすく */
+    border-radius: 5px;      /* 角を丸く */
+    border: none;            /* 標準の枠線を消す */
+    cursor: pointer;         /* マウスを乗せたら指のマークに */
+    transition: 0.3s;        /* ふんわり変化させる */
+}
+
+/* ログインボタンの色 */
+.button-group input[name="tou"] {
+    background-color: #4a90e2; /* 青色 */
+    color: white;
+    font-weight: bold;
+}
+
+/* リセットボタンの色 */
+.button-group input[name="reset"] {
+    background-color: #FFF000; /* 黄色 */
+    color: #333;
+}
+
+/* ボタンに乗せた時の演出 */
+.button-group input:hover {
+    opacity: 0.8;            /* 少し透明にして反応を示す */
+    transform: translateY(-2px); /* 少し浮かせる */
 }
