@@ -87,13 +87,22 @@ public class EditServlet extends HttpServlet {
         InputStream in = part.getInputStream();
         
         //保存先を取得 //ユーザーでファイルを分ける必要がある。/images_screenshotの下の階層に
-        String path = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
+        String base = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
         
+        // ユーザーIDのフォルダ
+        Path userFolder = Paths.get(base, userId);
+
+        // フォルダがなければ作成
+        Files.createDirectories(userFolder);
+        
+        System.out.println(userFolder);       
         //ファイルの名前を指定
-        String fileName = date + ".png";
+        String fileName = userId + "_" + date + ".png";
         System.out.println("sample2で保存します");
 
-        Path savePath = Paths.get(path, fileName);
+        //Path savePath = Paths.get(path, fileName);
+        // 保存先
+        Path savePath = userFolder.resolve(fileName);
 
         Files.copy(
                 in,

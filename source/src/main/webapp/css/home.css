@@ -2,7 +2,7 @@
 
 body{
 	/* 画像のパスを指定 */
-	background-image: url('/f4/images_back/home.png');
+	background-image: url('/f4/images_back/main.png');
 
 	/* 画像の設定 */
 	background-size: cover;/* 画面全体に広げる */

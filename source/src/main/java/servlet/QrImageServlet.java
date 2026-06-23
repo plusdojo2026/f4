@@ -54,7 +54,10 @@ public class QrImageServlet extends HttpServlet {
         	// ベースとなるURLさを作成。qrTextで、ユーザーIDをもったものを作成。
         	//　ローカルホストのURL。本番では変更（baseUrl)
         	//　今のURLを取得して、書き換える方式？に検討。
-        	String baseUrl = "http://localhost:8080/f4";
+        	String baseUrl = request.getScheme() + "://" +
+        	                 request.getServerName() + ":" +
+        	                 request.getServerPort() +
+        	                 request.getContextPath();
 
         	String qrText = baseUrl + "/HomeServlet?userId=" + userId;
         	
