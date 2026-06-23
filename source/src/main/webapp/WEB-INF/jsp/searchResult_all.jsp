@@ -11,10 +11,10 @@
 <body id="top">
         <div class="container">
 
-            <img src="images/carenderhaikei.png" class="background">
+            <img src="images_back/album.png" class="background">
 
             <div class="album">
-                <img src="images/アルバム(差分) (1).png" class="album-img">
+                <img src="images_back/search_all.png" class="album-img">
             </div>
 
             <div class="album-contents">
@@ -22,22 +22,22 @@
                 <div class="page left-page">
                     <div class="photo-card">
                         <span class="date-badge">2026/06/09</span>
-                        <img src="images/7.まあまあ.png" alt="写真">
+                        <img src="images/maamaa.png" alt="写真">
                     </div>
                     <div class="photo-card">
                         <span class="date-badge">2026/06/09</span>
-                        <img src="images/8.いいかも.png" alt="写真">
+                        <img src="images/iikamo.png" alt="写真">
                     </div>
                 </div>
 
                 <div class="page right-page">
                     <div class="photo-card">
                         <span class="date-badge">2026/06/09</span>
-                        <img src="images/9.うきうき.png" alt="写真">
+                        <img src="images/ukiuki.png" alt="写真">
                     </div>
                     <div class="photo-card">
                         <span class="date-badge">2026/06/09</span>
-                        <img src="images/10.るんるん.png" alt="写真">
+                        <img src="images/runnrunn.png" alt="写真">
                     </div>
 
                     <a href="#" class="next-arrow">➔</a>
