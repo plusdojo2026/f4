@@ -58,7 +58,8 @@ public class EditServlet extends HttpServlet {
         //String path = getServletContext().getRealPath("/images_screenshot");
         String path = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
 
-        String fileName = "sample.png";
+        String fileName = "sample2.png";
+        System.out.println("sample2で保存します");
 
         Path savePath = Paths.get(path, fileName);
 

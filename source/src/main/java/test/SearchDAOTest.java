@@ -12,7 +12,7 @@ public class SearchDAOTest {
 
         // 検索条件（日付だけ）
         Daily_record search = new Daily_record();
-        search.setCreateDate(Date.valueOf("2026-06-23")); // ←ここ変えてテスト
+        search.setCreateDate(Date.valueOf("2026-06-17")); // ←ここ変えてテスト
 
         String userId = "papa";
 

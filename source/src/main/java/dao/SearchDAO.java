@@ -25,7 +25,7 @@ public class SearchDAO {
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "SELECT user_id,create_date "
+			String sql = "SELECT * "
 					+ "FROM daily_records "
 					+ "WHERE user_id =? "
 					+ "AND create_date=?";
@@ -48,9 +48,9 @@ public class SearchDAO {
 //				pStmt.setString(4, "%");
 //			}
 			if (record.getCreateDate() != null) {
-				pStmt.setString(2, "%" + record.getCreateDate() + "%");
+					pStmt.setDate(2, record.getCreateDate());
 			} else {
-				pStmt.setString(2, "%");
+					pStmt.setDate(2, null);
 			}
 //			if (record.getDefaultScreenShot() != null) {
 //				pStmt.setString(6, "%" + record.getDefaultScreenShot() + "%");
