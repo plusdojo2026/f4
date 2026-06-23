@@ -19,6 +19,14 @@ body {
     gap: 40px;
 }
 
+.slider-V label {
+    background-color: #ffffff; /* 白色の背景 */
+    padding: 5px 10px;       /* 文字の周りに余白を作る */
+    border-radius: 5px;      /* 角を少し丸くする */
+    color: #333333;          /* 文字色は背景に合わせて濃い色にする */
+    display: inline-block;   /* 文字の長さに合わせて背景を広げる */
+}
+
 .slider-V {
     display: flex;
     flex-direction: column;
@@ -49,7 +57,7 @@ body {
     
     /* コンテナのサイズは200pxのままでも、パスを広げたので大きく見えます */
     width: 200px;
-    height: 200px;
+    height: 220px;
 }
 
 /* 中身（塗りつぶし）：下から上に溜まる */
@@ -82,8 +90,37 @@ label {
     margin-bottom: 10px;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* 2. form を画面全体に広げる */
 form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* フォーム内の全要素（スライダーとボタン）を中央揃え */
+    align-items: center;    /* 左右の中央揃え */
+    justify-content: center; /* 上下の中央揃え */
+    
+    min-height: 100vh;      /* 画面の高さ(100vh)分を確保 */
+}
+.send-btn {
+    /* ボタンのサイズ（画像に合わせて調整してください） */
+    width: 150px;
+    height: 150px;
+    
+    /* ボタンの枠線や背景色を消す */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    
+    /* 画像を設定 */
+    background-image: url('/f4/images_back/click.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* アニメーション（動きをつける） */
+    transition: transform 0.2s;
 }
