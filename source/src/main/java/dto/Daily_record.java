@@ -4,17 +4,17 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Daily_record implements Serializable {
-	private int userId; // ユーザーID
+	private String userId; // ユーザーID
 	private int characterId; // キャラクターID
 	private int body; // からだ
 	private int mind; // きもち
 	private Date createDate; // 日付
 	private String defaultScreenShot; //　初期スクリーンショット画像
 	private String editScreenShot; //　らくがき後スクリーンショット画像
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public int getCharacterId() {
@@ -53,7 +53,7 @@ public class Daily_record implements Serializable {
 	public void setEditScreenShot(String editScreenShot) {
 		this.editScreenShot = editScreenShot;
 	}
-	public Daily_record(int userId, int characterId, int body, int mind, Date createDate, String defaultScreenShot,
+	public Daily_record(String userId, int characterId, int body, int mind, Date createDate, String defaultScreenShot,
 			String editScreenShot) {
 		super();
 		this.userId = userId;
@@ -64,9 +64,10 @@ public class Daily_record implements Serializable {
 		this.defaultScreenShot = defaultScreenShot;
 		this.editScreenShot = editScreenShot;
 	}
+	
 	public Daily_record() {
 		super();
-		this.userId = 0;
+		this.userId = "";
 		this.characterId = 0;
 		this.body = 0;
 		this.mind = 0;
@@ -79,4 +80,7 @@ public class Daily_record implements Serializable {
 	public Daily_record(Date createDate) {
 		this.createDate=createDate;
 	}
+	
 }
+
+
