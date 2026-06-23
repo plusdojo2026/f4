@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body {
+	/* 画像のパスを指定 */
+	background-image: url('/f4/images_back/regist.png');
+
+	/* 画像の設定 */
+	background-size: cover; /* 画面全体に広げる */
+	background-position: center; /* 中央に配置 */
+	background-repeat: no-repeat; /* 繰り返さない */
+	background-attachment: fixed; /* スクロールしても動かない */
+}
