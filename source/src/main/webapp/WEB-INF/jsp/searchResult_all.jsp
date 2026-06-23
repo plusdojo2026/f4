@@ -22,24 +22,24 @@
 
 			   <!-- 左ページ -->
 			   <div class="page left-page">
-			       <c:forEach var="record" items="${records}" begin="0" end="1">
+			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
 			           <div class="photo-card">
 			               <span class="date-badge">
-			                   ${record.date}
+			                   ${record.createDate}
 			               </span>
-			               <img src="images_screenshot/${record.image}" alt="写真">
+			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
 			   </div>
 			
 			   <!-- 右ページ -->
 			   <div class="page right-page">
-			       <c:forEach var="record" items="${records}" begin="2" end="3">
+			       <c:forEach var="record" items="${recordList}" begin="2" end="3">
 			           <div class="photo-card">
 			               <span class="date-badge">
-			                   ${record.date}
+			                   ${record.createDate}
 			               </span>
-			               <img src="images_screenshot/${record.image}" alt="写真">
+			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
 			       <a href="#" class="next-arrow">➔</a>
