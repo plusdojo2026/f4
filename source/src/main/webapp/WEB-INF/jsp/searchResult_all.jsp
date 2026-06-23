@@ -1,27 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>ぱぱっとコミュ！|未入力結果画面</title>
+<link rel="stylesheet" href="/f4/css/all.css">
 </head>
-<body>
-<div class="container">
+<body id="top">
+        <div class="container">
 
-            <!-- 背景画像 -->
-            <!-- <img src="images/carenderhaikei.png" class="background"> -->
+            <img src="images/carenderhaikei.png" class="background">
 
-            <!-- アルバム -->
+            <div class="album">
+                <img src="images/アルバム(差分) (1).png" class="album-img">
+            </div>
+
+            <div class="album-contents">
             
-            <h1>未入力画面</h1>
-            <form method="POST" action="/f4/DetailServlet"> 
-            	<input type="submit" name="syousai" value="詳細">
-            </form>
-            
+                <div class="page left-page">
+                    <div class="photo-card">
+                        <span class="date-badge">2026/06/09</span>
+                        <img src="images/7.まあまあ.png" alt="写真">
+                    </div>
+                    <div class="photo-card">
+                        <span class="date-badge">2026/06/09</span>
+                        <img src="images/8.いいかも.png" alt="写真">
+                    </div>
+                </div>
 
-<p><a href="/f4/SearchServlet">検索画面に戻る</a></p>          
-</div>
-</body>
+                <div class="page right-page">
+                    <div class="photo-card">
+                        <span class="date-badge">2026/06/09</span>
+                        <img src="images/9.うきうき.png" alt="写真">
+                    </div>
+                    <div class="photo-card">
+                        <span class="date-badge">2026/06/09</span>
+                        <img src="images/10.るんるん.png" alt="写真">
+                    </div>
+
+                    <a href="#" class="next-arrow">➔</a>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
