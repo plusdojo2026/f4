@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,16 @@
 
 <div id="captureArea">
 	<img src="images_back/main.png" alt="">
+	<c:forEach var="character" items="${characterList }">
+	<img 
+		id="characterImage"
+		src="${character.characterMainImg}" 
+		alt="キャラ画像" 
+		width="500" height="300"
+	>
+    </div>	
+	</c:forEach>
+	
     <canvas
         id="canvas"
         width="1250"
