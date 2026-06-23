@@ -20,7 +20,7 @@ public class Daily_recordsDAO {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webapp2?"
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 
@@ -107,7 +107,7 @@ public class Daily_recordsDAO {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webapp2?"
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 
@@ -120,7 +120,6 @@ public class Daily_recordsDAO {
 			pStmt.setInt(2, record.getBody());
 			pStmt.setInt(3, record.getMind());
 	        
-			System.out.println(sql);
 			
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
