@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン結果画面</title>
+<link rel="stylesheet" href="css/loginResult.css">
 </head>
 <body>
 <h1>ログイン結果画面</h1>
