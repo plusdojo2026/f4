@@ -11,8 +11,8 @@
 <h1>ログイン画面</h1>
 
 <!-- 新規登録ボタン -->
-<div>
-	<p><a href="/f4/RegistServlet">新規登録</a></p>
+<div class="regist-container">
+    <p><a href="/f4/RegistServlet">新規登録</a></p>
 </div>
 
 
@@ -29,10 +29,10 @@
 			</label>
 		</div>
 	</div>
-	<div>
-		<input type="submit" name="login">
-		<input type="reset" name="reset">
-	</div>
+	<div class="button-group">
+    <input type="submit" name="login" value="ログイン">
+    <input type="reset" name="reset" value="リセット">
+</div>
 </form>
 </body>
 </html>
