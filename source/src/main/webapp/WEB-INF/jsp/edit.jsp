@@ -40,13 +40,15 @@
 <button onclick="saveScreenshot()">保存</button>
 
 <script>
+
 const canvas = document.getElementById("canvas");
 
+/* canvasに落書き機能を持たせる */
 const signaturePad = new SignaturePad(canvas);
 
-/* 色の切り替え */
-let isRed = false;
 
+let isRed = false;
+/* 色の切り替え */
 function toggleColor() {
     isRed = !isRed;
 
@@ -57,8 +59,9 @@ function toggleColor() {
     }
 }
 
+/* スクリーンショット保存機能 */
 function saveScreenshot() {
-
+	/* captureAreaを保存 */
     html2canvas(document.getElementById("captureArea"))
         .then(function(screenshot) {
         
