@@ -63,6 +63,7 @@ public class SearchServlet extends HttpServlet {
 		search.setUserId(userId);
 	    
 		String date = request.getParameter("create_date");
+		//deteがnullでもなく空文字でもない(入力時)
 		if (date != null && !date.isEmpty()) {
 		    search.setCreateDate(java.sql.Date.valueOf(date));
 		}
@@ -77,6 +78,7 @@ public class SearchServlet extends HttpServlet {
 		request.setAttribute("recordList", recordList);
 		
 		//画面遷移の分岐
+		//deteがnullまたは空文字(未入力)
 		if(date == null || date.isEmpty()){
 			//	未入力時の結果画面に遷移		
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
