@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.Daily_recordsDAO;
 import dto.Daily_record;
+import dto.LoginUser;
 
 /**
  * Servlet implementation class SliderServlet
@@ -45,8 +46,15 @@ public class SliderServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		String userId = (String) session.getAttribute("user_id");
+		LoginUser user = (LoginUser) session.getAttribute("id");
 
+		if (user == null) {
+			response.sendRedirect(request.getContextPath() + "/LoginServlet");
+			return;
+		}
+		
+		// userId取得（QRに組み込むため）
+        String userId = user.getUserId();
 		int body = Integer.parseInt(request.getParameter("body"));
 		int mind = Integer.parseInt(request.getParameter("mind"));
 		
@@ -56,8 +64,7 @@ public class SliderServlet extends HttpServlet {
 		// DAO呼び出し
 		Daily_recordsDAO dao = new Daily_recordsDAO();
 		dao.insert(record, userId);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/HomeServlet");
-		dispatcher.forward(request, response);
+		response.sendRedirect(request.getContextPath() + "/HomeServlet");
 		
 
 	}
