@@ -10,3 +10,8 @@ body{
 	background-repeat: no-repeat;/* 繰り返さない */
 	background-attachment: fixed;/* スクロールしても動かない */
 }
+
+#qr{
+	display: block;
+	margin: 0 auto;
+}

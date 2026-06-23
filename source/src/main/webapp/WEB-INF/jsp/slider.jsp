@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <button type="submit">送信</button>
+    <button type="submit" class="send-btn"></button>
 </form>
 
 <script>

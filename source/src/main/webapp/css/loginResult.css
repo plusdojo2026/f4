@@ -9,4 +9,24 @@ body {
 	background-position: center; /* 中央に配置 */
 	background-repeat: no-repeat; /* 繰り返さない */
 	background-attachment: fixed; /* スクロールしても動かない */
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;/* 左右の中央揃え */
+	justify-content: center;/* 上下の中央揃え */
+	min-height: 100vh;/* 画面の高さ(100vh)分を確保 */
+}
+
+h1,h2{
+	background-color:pink;/* 背景色 */
+	padding:5px 10px;/* 文字の周りに余白を作る */
+	border-radius:5px;/* 角を少し丸くする */
+}
+
+a{
+	background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px auto;
 }
