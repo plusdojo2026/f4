@@ -1,7 +1,7 @@
 package dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 public class Daily_record implements Serializable {
 	private String userId; // ユーザーID
