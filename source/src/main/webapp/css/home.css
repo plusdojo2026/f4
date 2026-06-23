@@ -6,7 +6,7 @@ body{
 
 	/* 画像の設定 */
 	background-size: 1920px 1080px;/* 画面全体に広げる */
-	background-position: center;/* 中央に配置 */
+	background-position: center 75%;
 	background-repeat: no-repeat;/* 繰り返さない */
 	background-attachment: fixed;/* スクロールしても動かない */
 }
