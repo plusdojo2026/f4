@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -18,31 +19,33 @@
             </div>
 
             <div class="album-contents">
-            
-                <div class="page left-page">
-                    <div class="photo-card">
-                        <span class="date-badge">2026/06/09</span>
-                        <img src="images/maamaa.png" alt="写真">
-                    </div>
-                    <div class="photo-card">
-                        <span class="date-badge">2026/06/09</span>
-                        <img src="images/iikamo.png" alt="写真">
-                    </div>
-                </div>
 
-                <div class="page right-page">
-                    <div class="photo-card">
-                        <span class="date-badge">2026/06/09</span>
-                        <img src="images/ukiuki.png" alt="写真">
-                    </div>
-                    <div class="photo-card">
-                        <span class="date-badge">2026/06/09</span>
-                        <img src="images/runnrunn.png" alt="写真">
-                    </div>
-
-                    <a href="#" class="next-arrow">➔</a>
-                </div>
-            </div>
+			   <!-- 左ページ -->
+			   <div class="page left-page">
+			       <c:forEach var="record" items="${records}" begin="0" end="1">
+			           <div class="photo-card">
+			               <span class="date-badge">
+			                   ${record.date}
+			               </span>
+			               <img src="images_screenshot/${record.image}" alt="写真">
+			           </div>
+			       </c:forEach>
+			   </div>
+			
+			   <!-- 右ページ -->
+			   <div class="page right-page">
+			       <c:forEach var="record" items="${records}" begin="2" end="3">
+			           <div class="photo-card">
+			               <span class="date-badge">
+			                   ${record.date}
+			               </span>
+			               <img src="images_screenshot/${record.image}" alt="写真">
+			           </div>
+			       </c:forEach>
+			       <a href="#" class="next-arrow">➔</a>
+			   </div>
+			
+			</div>
         </div>
     </body>
 </html>
