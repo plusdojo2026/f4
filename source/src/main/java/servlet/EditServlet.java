@@ -16,7 +16,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+
+import dao.EditDAO;
+import dto.Daily_record;
+import dto.LoginUser;
 /**
  * Servlet implementation class EditServlet
  */
@@ -40,6 +45,14 @@ public class EditServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("id");
+		
+		// もしユーザーID取得なし、つまり、うまくログインできていないなら、ログイン画面へ帰ってもらう。
+		if (user == null) {
+			response.sendRedirect(request.getContextPath() + "/LoginServlet");
+			return;
+		}
 		
 		//　落書きページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/edit.jsp");
@@ -53,7 +66,19 @@ public class EditServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-	
+		
+		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("id");
+		
+		// もしユーザーID取得なし、つまり、うまくログインできていないなら、ログイン画面へ帰ってもらう。
+		if (user == null) {
+			response.sendRedirect(request.getContextPath() + "/LoginServlet");
+			return;
+		}
+		
+		// userId取得（QRに組み込むため）
+		String userId = user.getUserId();
+		
 		//西暦年月日
 		String date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		
@@ -61,7 +86,7 @@ public class EditServlet extends HttpServlet {
 
         InputStream in = part.getInputStream();
         
-        //保存先を取得
+        //保存先を取得 //ユーザーでファイルを分ける必要がある。/images_screenshotの下の階層に
         String path = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
         
         //ファイルの名前を指定
@@ -74,12 +99,40 @@ public class EditServlet extends HttpServlet {
                 in,
                 savePath,
                 StandardCopyOption.REPLACE_EXISTING);
+        System.out.println("画像を保存");
         
         
+        try {
 
-        // ホーム画面にフォワードする
-     	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-     	dispatcher.forward(request, response);
+            request.setCharacterEncoding("UTF-8");
+
+            //HttpSession session = request.getSession();
+
+            //LoginUser user = (LoginUser)session.getAttribute("id");
+
+            //String userId = user.getUserId();
+
+            //String saveDate = LocalDate.now().toString();
+
+            Daily_record dto = new Daily_record();
+
+            //dto.setUserId(userId);
+            //dto.setSaveDate(saveDate);
+            dto.setEditScreenShot(fileName);
+            
+            EditDAO dao = new EditDAO();
+            dao.update(dto,userId);
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+        }
+
 		
+	    // ホーム画面にフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+		dispatcher.forward(request, response);
+				
 	}
 }
+        

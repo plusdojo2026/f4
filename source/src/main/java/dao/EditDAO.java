@@ -9,7 +9,7 @@ import dto.Daily_record;
 
 public class EditDAO {
 	
-	public boolean update(Daily_record dto) {
+	public boolean update(Daily_record dto,String userId) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -23,12 +23,14 @@ public class EditDAO {
 					"root", "password");
 
 			// SQL文を準備する 
-			String sql ="UPDATE daily_records SET edit_screenshot = ?";
+			String sql ="UPDATE daily_records SET edit_screenshot = ? WHERE user_id = ? AND create_date = CURRENT_DATE";
 			
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//SQL文を完成させる
             pStmt.setString(1, dto.getEditScreenShot());
+            
+            pStmt.setString(2, userId);
             
             //return pStmt.executeUpdate() > 0;
 			
