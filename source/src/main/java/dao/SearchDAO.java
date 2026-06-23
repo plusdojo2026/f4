@@ -11,7 +11,7 @@ import java.util.List;
 import dto.Daily_record;
 
 public class SearchDAO {
-	public List<Daily_record> select(Daily_record record) {
+	public List<Daily_record> select(Daily_record record, String userId) {
 		Connection conn = null;
 		List<Daily_record> recordList = new ArrayList<Daily_record>();
 
@@ -35,7 +35,7 @@ public class SearchDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-				pStmt.setString(1, "%" + record.getUserId() + "%");
+				pStmt.setString(1, userId);
 //				pStmt.setString(2, "%" + record.getCharacterId() + "%");
 //			if (record.getBody() >= 0 && record.getBody() <= 100) {
 //				pStmt.setString(3, "%" + record.getBody() + "%");

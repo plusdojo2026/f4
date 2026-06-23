@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.SearchDAO;
 import dto.Daily_record;
-import dto.LoginUser;
 
 /**
  * Servlet implementation class SearchServlet
@@ -49,11 +48,11 @@ public class SearchServlet extends HttpServlet {
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
 		
 		HttpSession session = request.getSession();
-		LoginUser user = (LoginUser) session.getAttribute("id");
-		if (user == null) {
-			response.sendRedirect(request.getContextPath() + "/LoginServlet");
-			return;
-		}
+//		LoginUser user = (LoginUser) session.getAttribute("id");
+//		if (user == null) {
+//			response.sendRedirect(request.getContextPath() + "/LoginServlet");
+//			return;
+//		}
 		//文字コードの設定。
 		request.setCharacterEncoding("UTF-8");
 		// ログイン中のユーザーIDを取得
@@ -62,7 +61,7 @@ public class SearchServlet extends HttpServlet {
 		
 		
 		Daily_record search = new Daily_record();
-		String userId = user.getUserId();
+		String userId = "papa";
 	    
 		String date = request.getParameter("create_date");
 		//deteがnullでもなく空文字でもない(入力時)
@@ -74,7 +73,7 @@ public class SearchServlet extends HttpServlet {
 //	    java.sql.Date date = java.sql.Date.valueOf(request.getParameter("create_date"));
 	    //if (date == null) date = "";
 		SearchDAO recordDAO = new SearchDAO();
-		List<Daily_record> recordList  = recordDAO.select(search);
+		List<Daily_record> recordList  = recordDAO.select(search,userId);
 //		List<Daily_record> recordList  = recordDAO.select(new Daily_record(date));
 		
 		request.setAttribute("recordList", recordList);
