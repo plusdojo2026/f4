@@ -37,7 +37,7 @@
     <input type="button" value="保存" onclick="saveScreenshot()">
 </form>
 -->
-<a href="/f4/HomeServlet"><button onclick="saveScreenshot()">保存</button></a>
+<button onclick="saveScreenshot()">保存</button>
 
 <script>
 
