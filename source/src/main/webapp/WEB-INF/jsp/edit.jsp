@@ -27,7 +27,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/dist/signature_pad.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="javascript/edit.js"></script>
+
 
 
 <form id="editForm" method="POST" action="/f4/EditServlet">
@@ -41,5 +41,12 @@
 	<input type="submit" name="screenshot" value="保存">
 </form>
 -->
+
+<script>
+	use strust;
+	
+	
+</script>
+
 </body>
 </html>
