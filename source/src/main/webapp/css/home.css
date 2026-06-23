@@ -3,10 +3,9 @@
 body{
 	/* 画像のパスを指定 */
 	background-image: url('/f4/images_back/main.png');
-	background-size: cover;
 
 	/* 画像の設定 */
-	background-size: cover;/* 画面全体に広げる */
+	background-size: 1920px 1080px;/* 画面全体に広げる */
 	background-position: center;/* 中央に配置 */
 	background-repeat: no-repeat;/* 繰り返さない */
 	background-attachment: fixed;/* スクロールしても動かない */
