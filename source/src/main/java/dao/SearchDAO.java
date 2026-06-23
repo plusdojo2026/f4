@@ -69,7 +69,7 @@ public class SearchDAO {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				Daily_record daily_records = new Daily_record(
-						rs.getInt("user_id"), 
+						rs.getString("user_id"), 
 						rs.getInt("character_id"),
 						rs.getInt("body"),
 						rs.getInt("mind"),
