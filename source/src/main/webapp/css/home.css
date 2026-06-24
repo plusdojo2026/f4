@@ -2,10 +2,9 @@
 
 body{
 	/* 画像のパスを指定 */
-	background-image: url('/f4/images_back/main.png');
+	background-image: url('/f4/images_home/home1980.png');
 
 	/* 画像の設定 */
-	background-size: 1920px 1080px;/* 画面全体に広げる */
 	background-position: center 75%;
 	background-repeat: no-repeat;/* 繰り返さない */
 	background-attachment: fixed;/* スクロールしても動かない */
