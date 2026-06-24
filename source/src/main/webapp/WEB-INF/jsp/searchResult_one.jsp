@@ -23,9 +23,7 @@
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
 			           <div class="photo-card">
 							<div class="date-font">
-								<span class="date-badge date-font">
-							        ${record.createDate}
-							    </span>
+							        <span class="date-badge date-font">${record.createDate}</span>
 							</div>
 			               <!--  <span class="date-badge">
 			                   ${record.createDate}
@@ -33,6 +31,11 @@
 							-->
 			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
+						<form method="POST" action="/f4/dailySearch.jsp">
+							<button type="submit" class="image-submit-btn">
+	                        	<img src="images_back/RETURN.png" alt="戻るボタン">
+	                    	</button>
+	                    </form>>
 			       </c:forEach>
 			   </div>
 	</div>
