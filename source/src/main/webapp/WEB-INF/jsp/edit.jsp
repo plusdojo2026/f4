@@ -14,8 +14,9 @@
 <h1>落書き画面</h1>
 
 <!-- 色切り替えボタン -->
-<div>
-	<button onclick="toggleColor()">色切替</button>
+<div id="pen">
+	<!-- <button onclick="toggleColor()">色切替</button> -->
+	<img src="images_home/ank_right.png" alt="色切替" onclick="toggleColor()">
 </div>
 
 <!-- スクリーンショットエリア -->
@@ -45,11 +46,6 @@
         </c:forEach>
     	</div>
 	</c:forEach>
-	
-	
-	<div id="characterImage">
-		<img src="images/maamaa.png" alt="">
-	</div>
 	
 	<!-- キャンバス -->
     <canvas
