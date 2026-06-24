@@ -12,7 +12,7 @@
 
 </head>
 <body>
-
+	<div class="container">
 	<h1>ホーム画面</h1>
 	
 	<c:forEach var="character" items="${characterList }">
@@ -44,7 +44,7 @@
 	<p><a href="/f4/SearchServlet">アルバム</a></p>
 	<p><a href="/f4/QrServlet">QR</a></p>
 	<p><a href="/f4/EditServlet">落書き</a></p>
-	
+	</div>
 	
 
 </body>
