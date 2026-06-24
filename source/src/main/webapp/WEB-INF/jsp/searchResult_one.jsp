@@ -5,19 +5,41 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ぱぱっとコミュ！|日別結果画面</title>
+<link rel="stylesheet" href="/f4/css/one.css">
 </head>
-<body>
-<h1>検索結果！</h1>
+<body id="top">
+<div class="container">
 
+            <img src="images_back/album.png" class="background">
 
-<c:forEach var="e" items="${recordList}" >
+            <div class="album">
+                <img src="images_back/search_one.png" class="album-img">
+            </div>
+
+            <div class="album-contents">
+
+			   <!-- 左ページ -->
+			   <div class="page left-page">
+			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
+			           <div class="photo-card">
+			               <span class="date-badge">
+			                   ${record.createDate}
+			               </span>
+			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
+			           </div>
+			       </c:forEach>
+			   </div>
+	</div>
+</div>
+
+<!--<c:forEach var="e" items="${recordList}" >
 	<form method="POST" action="/f4/SearchServlet">
 	ユーザーID<input type="text" name="company" value="${e.userId}"><br>
 	日付<input type="date" name="department" value="${e.createDate}"><br>
 
 	</form>
-</c:forEach>
+</c:forEach> -->
 
 <p><a href="/f4/SearchServlet">検索画面に戻る</a></p>
 
