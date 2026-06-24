@@ -23,20 +23,29 @@
 
 	<!-- 背景画像 -->
 	<div id="background">
-		<!-- <img src="images_home/home1980.png" alt=""> -->
-		<img src="images_screenshot/2026-06-24.png" alt="">
+		<img src="images_home/home1980.png" alt="">
 	</div>
 	
-	<!-- キャラクター画像 
+	<!-- キャラクター画像 -->
 	<c:forEach var="character" items="${characterList }">
-	<img 
+		<img 
 		id="characterImage"
-		src="${character.characterMainImg}" 
+		src="${pageContext.request.contextPath}/${character.characterMainImg}" 
 		alt="キャラ画像" 
 		width="500" height="300"
-	>	
+		>
+		<!-- 画像切り替え用の画像リスト -->
+    	<div id="imageList" style="display: none;">
+        <!-- 最初のメイン画像もリストに入れる -->
+        <span data-img="${pageContext.request.contextPath}/${character.characterMainImg}"></span>
+
+        <!-- 差分画像リスト -->
+        <c:forEach var="sub" items="${characterSubList}">
+            <span data-img="${pageContext.request.contextPath}/${sub.characterSubImg}"></span>
+        </c:forEach>
+    	</div>
 	</c:forEach>
-	-->
+	
 	
 	<div id="characterImage">
 		<img src="images/maamaa.png" alt="">
@@ -54,9 +63,10 @@
 
 <!-- スクリーンショットのライブラリ -->
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<!-- <script src="javascript/edit.js"></script> -->
 
 <button onclick="saveScreenshot()">保存</button>
+<a href="DailyCharacterServlet">戻る</a>
+
 
 <script>
 
@@ -81,8 +91,8 @@ function toggleColor() {
 /* スクリーンショット保存機能 */
 function saveScreenshot() {
 	/* captureAreaを保存 */
-    html2canvas(document.getElementById("captureArea"),{width: 1920,height: 1080})
-        
+    const element = document.getElementById("captureArea");
+	html2canvas(element,  {scale: 1920 / element.offsetWidth})
 
         .then(function(screenshot) {
         
