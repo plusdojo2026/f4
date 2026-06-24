@@ -20,7 +20,7 @@
             <div class="album-contents">
 
 			   <!-- 左ページ -->
-			   <div class="page left-page">
+			   <div class="page center-page">
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
 			           <div class="photo-card">
 							<div class="date-font">
