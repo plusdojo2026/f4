@@ -1,6 +1,5 @@
 package servlet;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -10,7 +9,6 @@ import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -21,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import dao.EditDAO;
+import dto.Daily_record;
 import dto.LoginUser;
 /**
  * Servlet implementation class EditServlet
@@ -64,6 +64,18 @@ public class EditServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		
+		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("id");
+		
+		// もしユーザーID取得なし、つまり、うまくログインできていないなら、ログイン画面へ帰ってもらう。
+		if (user == null) {
+			response.sendRedirect(request.getContextPath() + "/LoginServlet");
+			return;
+		}
+		
+		// userId取得（QRに組み込むため）
+		String userId = user.getUserId();
 	
 		//西暦年月日
 		String date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -72,26 +84,45 @@ public class EditServlet extends HttpServlet {
 
         InputStream in = part.getInputStream();
         
-        //保存先を取得
-        String path = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
+        //保存先を取得 //ユーザーでファイルを分ける必要がある。/images_screenshotの下の階層に
+        String base = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
+        
+        // ユーザーIDのフォルダ
+        Path userFolder = Paths.get(base, userId);
+
+        // フォルダがなければ作成
+        Files.createDirectories(userFolder);
         
         //ファイルの名前を指定
-        String fileName = date + ".png";
+        String fileName = userId + "_" + date + ".png";
         System.out.println("sample2で保存します");
 
-        Path savePath = Paths.get(path, fileName);
+        // 保存先
+        Path savePath = userFolder.resolve(fileName);
 
         Files.copy(
                 in,
                 savePath,
                 StandardCopyOption.REPLACE_EXISTING);
-        
-        BufferedImage image = ImageIO.read(in);
 
-        System.out.println(
-            image.getWidth() + " x " + image.getHeight()
-        );
-        System.out.println("sample2で保存します");
+        System.out.println("画像を保存");
+
+        //DAOに接続（INSERT処理）
+        try {
+
+            request.setCharacterEncoding("UTF-8");
+
+            Daily_record dto = new Daily_record();
+
+            dto.setEditScreenShot(fileName);
+            
+            EditDAO dao = new EditDAO();
+            dao.update(dto,userId);
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+        }
         
 
         // ホーム画面にフォワードする
