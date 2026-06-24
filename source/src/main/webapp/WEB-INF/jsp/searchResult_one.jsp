@@ -28,7 +28,7 @@
 			                   ${record.createDate}
 			               </span>
 							-->
-			               <img src="images_screenshot/${record.editScreenShot}" alt="写真" class="no-calendar">
+			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
 			   </div>
