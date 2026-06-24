@@ -1,5 +1,6 @@
 package servlet;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -9,6 +10,7 @@ import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -75,6 +77,12 @@ public class EditServlet extends HttpServlet {
                 savePath,
                 StandardCopyOption.REPLACE_EXISTING);
         
+        BufferedImage image = ImageIO.read(in);
+
+        System.out.println(
+            image.getWidth() + " x " + image.getHeight()
+        );
+        System.out.println("sample2で保存します");
         
 
         // ホーム画面にフォワードする
