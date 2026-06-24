@@ -74,10 +74,10 @@ body {
     box-sizing: border-box;
 }
 
-.no-calendar::-webkit-calendar-picker-indicator {
+/*.no-calendar::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
-}
+}*/
 
 /* 写真画像そのもの */
 .photo-card img {
