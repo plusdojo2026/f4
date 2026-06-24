@@ -5,5 +5,12 @@ html{
         background-position: center; /* 中央配置 */
         background-repeat: no-repeat;
     }
+
+.characterImage{
+	
+	width:1920px;
+    height:1080px;
+	
+}
     
 
