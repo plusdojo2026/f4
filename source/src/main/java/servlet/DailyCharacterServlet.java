@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.Character_subsDAO;
 import dao.CharactersDAO;
@@ -95,7 +96,9 @@ public class DailyCharacterServlet extends HttpServlet {
 		List<Character> characterList = charaDao.select(characterId);
 		
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("characterList", characterList);
+		//request.setAttribute("characterList", characterList);
+		HttpSession session = request.getSession();
+		session.setAttribute("characterList", characterList);
 		
 		Character_subsDAO subDao = new Character_subsDAO();
 		List<Character_sub> characterSubList = subDao.select(characterId);
