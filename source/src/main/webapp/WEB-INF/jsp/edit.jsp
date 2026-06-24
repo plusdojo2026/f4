@@ -13,41 +13,50 @@
 
 <h1>落書き画面</h1>
 
+<!-- 色切り替えボタン -->
 <div>
 	<button onclick="toggleColor()">色切替</button>
 </div>
 
+<!-- スクリーンショットエリア -->
 <div id="captureArea">
-	<img src="images_back/main.png" alt="">
+
+	<!-- 背景画像 -->
+	<div id="background">
+		<img src="images_back/main.png" alt="">
+	</div>
+	
+	<!-- キャラクター画像 
 	<c:forEach var="character" items="${characterList }">
 	<img 
 		id="characterImage"
 		src="${character.characterMainImg}" 
 		alt="キャラ画像" 
 		width="500" height="300"
-	>
-    </div>	
+	>	
 	</c:forEach>
+	-->
 	
+	<div id="background">
+		<img src="images/maamaa.png" alt="">
+	</div>
+	
+	<!-- キャンバス -->
     <canvas
         id="canvas"
-        width="1250"
-        height="600"
+        width="1920"
+        height="1080"
         style="border:1px solid #ccc;">
     </canvas>
 </div>
 
+<!-- キャンバスに描画できるライブラリ -->
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/dist/signature_pad.umd.min.js"></script>
+
+<!-- スクリーンショットのライブラリ -->
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <!-- <script src="javascript/edit.js"></script> -->
 
-<!--
-<form id="editForm" method="POST" action="/f4/EditServlet">
-    <input type="hidden" id="imageData" name="imageData">
-
-    <input type="button" value="保存" onclick="saveScreenshot()">
-</form>
--->
 <button onclick="saveScreenshot()">保存</button>
 
 <script>
