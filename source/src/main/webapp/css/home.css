@@ -5,7 +5,8 @@ body{
 	background-image: url('/f4/images_home/home1980.png');
 
 	/* 画像の設定 */
-	background-position: center 75%;
+	width :1980px;
+	background-position: center;
 	background-repeat: no-repeat;/* 繰り返さない */
 	background-attachment: fixed;/* スクロールしても動かない */
 	position: relative;
@@ -15,7 +16,9 @@ body{
 	display: block;
 	margin: 0 auto;
 }
-
+.container{
+	position: absolute;
+}
 /* ホーム */
 /* ホーム：メニュー（机の引き出し） */
 .menu .slot-img {
