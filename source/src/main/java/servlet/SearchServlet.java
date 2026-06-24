@@ -59,29 +59,30 @@ public class SearchServlet extends HttpServlet {
 		// ログイン中のユーザーIDを取得
 //		int userId = (int) session.getAttribute("id");
 //		int userId = 1;
+		Daily_record record = new Daily_record();
+		String createDate = request.getParameter("create_date");
 		
 		
-		Daily_record search = new Daily_record();
 		String userId = user.getUserId();
 	    
-		String date = request.getParameter("create_date");
+		
 		//deteがnullでもなく空文字でもない(入力時)
-		if (date != null && !date.isEmpty()) {
-		    search.setCreateDate(java.sql.Date.valueOf(date));
+		if (createDate != null && !createDate.isEmpty()) {
+		    record.setCreateDate(java.sql.Date.valueOf(createDate));
 		}
 	    
 	    //日付（create_date）を取得する
 //	    java.sql.Date date = java.sql.Date.valueOf(request.getParameter("create_date"));
 	    //if (date == null) date = "";
 		SearchDAO recordDAO = new SearchDAO();
-		List<Daily_record> recordList  = recordDAO.select(search,userId);
+		List<Daily_record> recordList  = recordDAO.select(record,userId);
 //		List<Daily_record> recordList  = recordDAO.select(new Daily_record(date));
 		
 		request.setAttribute("recordList", recordList);
 		
 		//画面遷移の分岐
 		//deteがnullまたは空文字(未入力)
-		if(date == null || date.isEmpty()){
+		if(createDate == null || createDate.isEmpty()){
 			//	未入力時の結果画面に遷移		
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/searchResult_all.jsp");
 			dispatcher.forward(request, response);
