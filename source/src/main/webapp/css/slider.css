@@ -28,9 +28,16 @@ body {
 }
 
 .slider-V {
+	width: 600px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #F2F2F2; /* ここに薄いグレーを設定 */
+    border-radius: 20px;       /* 必要に応じて角を丸める */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 /* 共通コンテナ：大きくし、中央寄せ */
@@ -44,6 +51,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    background-color: #d3d3d3; /* 薄いグレー */
+    border-radius: 20px;
 }
 
 /* 各マークの形状 */
