@@ -13,11 +13,10 @@
 
             <img src="images_back/album.png" class="background">
 
+            <div class="album-contents">
             <div class="album">
                 <img src="images_back/search_one1.png" class="album-img">
             </div>
-
-            <div class="album-contents">
 
 			   <!-- 左ページ -->
 			   <div class="page center-page">
