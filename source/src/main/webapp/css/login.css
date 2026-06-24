@@ -11,17 +11,20 @@ body {
 	background-attachment: fixed; /* スクロールしても動かない */
 	text-align: center;
 }
-/* h1タグを中央寄せ */
-h1 {
-    text-align: center;
-    background-color: #CBE2FE;
-}
+
 .regist-container {
     background-color: rgba(255, 255, 255, 0.8); /* ここで好きな色を指定 */
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: inline-block; /* text-align: center の影響でこれで中央に来ます */
     margin: 10px auto;     /* 上下10px、左右は自動で中央へ */
+    font-size: 25px;
+}
+
+.logo img {
+    width: 1000px;  /* 横幅を300pxにする */
+    height: auto;  /* 高さは自動調整されて比率が維持されます */
+    margin-bottom: -300px;
 }
 /* divの中身（pタグ内のリンク）を中央寄せ */
 div{
@@ -38,9 +41,19 @@ label {
     border-radius: 5px;      /* 角を丸くする */
     display: inline-block;   /* 背景色を文字の幅に合わせる */
     margin-bottom: 5px;      /* 下の入力欄との間隔 */
-    font-weight: bold;       /* 太字にして見やすく */
+    font-weight: bold; 
+    font-size: 20px;      /* 太字にして見やすく */
 }
 
+input[type="text"] {
+    width: 300px;  /* 横幅を300pxにする */
+    height: 30px;  /* 高さを40pxにする */
+}
+
+input[type="password"] {
+    width: 300px;  /* 横幅を300pxにする */
+    height: 30px;  /* 高さを40pxにする */
+}
 /* 入力欄全体（div）の装飾 */
 form div {
     margin-bottom: 15px;     /* 項目同士の隙間を空ける */
@@ -65,7 +78,7 @@ form {
 /* ボタン共通の装飾 */
 .button-group input {
     padding: 10px 25px;      /* ボタンを大きくする */
-    font-size: 16px;         /* 文字サイズを読みやすく */
+    font-size: 20px;         /* 文字サイズを読みやすく */
     border-radius: 5px;      /* 角を丸く */
     border: none;            /* 標準の枠線を消す */
     cursor: pointer;         /* マウスを乗せたら指のマークに */
@@ -77,12 +90,16 @@ form {
     background-color: #4a90e2; /* 青色 */
     color: white;
     font-weight: bold;
+    width: 200px;  /* 横幅を300pxにする */
+    height: 45px;  /* 高さを40pxにする */
 }
 
 /* リセットボタンの色 */
 .button-group input[name="reset"] {
     background-color: #FFF000; /* 黄色 */
     color: #333;
+    width: 200px;  /* 横幅を300pxにする */
+    height: 45px;  /* 高さを40pxにする */
 }
 
 /* ボタンに乗せた時の演出 */

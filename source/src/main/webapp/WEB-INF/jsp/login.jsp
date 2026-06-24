@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<h1>ログイン画面</h1>
-
+<div class="logo">
+	<img src="/f4/images_back/papatto.png">
+</div>
 <!-- 新規登録ボタン -->
 <div class="regist-container">
     <p><a href="/f4/RegistServlet">新規登録</a></p>
