@@ -41,8 +41,10 @@
 			           </div>
 			       </c:forEach>
 			       <!-- <a href="#" class="next-arrow">➔</a>  -->
+			   	<form method="GET" action="/f4/SearchServlet">
+					<button type="submit" class="return-btn"></button>
+		        </form>
 			   </div>
-			
 			</div>
         </div>
     </body>
