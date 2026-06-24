@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.Daily_recordsDAO;
 import dao.UsersDAO;
-import dto.Daily_record;
 import dto.LoginUser;
 import dto.User;
 
@@ -51,15 +49,18 @@ public class LoginServlet extends HttpServlet {
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
 			session.setAttribute("id", new LoginUser(userId));
-			Daily_recordsDAO dao = new Daily_recordsDAO();
-			Daily_record record = dao.select(userId);
-			System.out.println(record);
-			if (record != null) {
-				// メニューサーブレットにリダイレクトする
-				response.sendRedirect(request.getContextPath() + "/SliderServlet");
-			}else {
-				response.sendRedirect(request.getContextPath() + "/DailyCharacterServlet");
-			}
+			response.sendRedirect(request.getContextPath() + "/SliderServlet");
+			
+//			Daily_recordsDAO dao = new Daily_recordsDAO();
+//			Daily_record record = dao.select(userId);
+//			System.out.println(record);
+//			
+//			if (record == null) {
+//				// メニューサーブレットにリダイレクトする
+//				response.sendRedirect(request.getContextPath() + "/SliderServlet");
+//			}else {
+//				response.sendRedirect(request.getContextPath() + "/DailyCharacterServlet");
+//			}
 
 		} else { // ログイン失敗
 			// 結果ページにフォワードする
