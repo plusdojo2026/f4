@@ -31,11 +31,9 @@
 							-->
 			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
-						<form method="POST" action="/f4/dailySearch.jsp">
-							<button type="submit" class="image-submit-btn">
-	                        	<img src="images_back/RETURN.png" alt="戻るボタン">
-	                    	</button>
-	                    </form>>
+						<form method="GET" action="/f4/SearchServlet">
+							<button type="submit" class="return-btn"></button>
+	                    </form>
 			       </c:forEach>
 			   </div>
 	</div>
@@ -49,7 +47,7 @@
 	</form>
 </c:forEach> -->
 
-<p><a href="/f4/SearchServlet">検索画面に戻る</a></p>
+<!--<p><a href="/f4/SearchServlet">検索画面に戻る</a></p> -->
 
 </body>
 </html>
