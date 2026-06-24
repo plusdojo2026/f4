@@ -8,9 +8,64 @@ body{
 	background-position: center 75%;
 	background-repeat: no-repeat;/* 繰り返さない */
 	background-attachment: fixed;/* スクロールしても動かない */
+	position: relative;
 }
 
 #characterImage{
 	display: block;
 	margin: 0 auto;
+}
+
+/* ホーム */
+/* ホーム：メニュー（机の引き出し） */
+.menu .slot-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	pointer-events: none;
+
+	opacity: 0;
+	transition: opacity 0.15s ease-in-out;
+	z-index: 5;
+}
+.menu ul {
+	position: relative;
+	z-index: 20;
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+.menu ul li {
+	position: relative;
+	width: 33.3%;
+	height: 100%;
+}
+/* ホーム：メニュー（机の引き出し）：ホバー時の処理（ホバー時かつ、チェックされていないときのみ） */
+.menu:has(.menu-left:hover):not(:has(#slot_left:checked)) .left-hover{
+	opacity: 1;
+}
+.menu:has(.menu-center:hover):not(:has(#slot_center:checked)) .center-hover{
+	opacity: 1;
+}
+.menu:has(.menu-right:hover):not(:has(#slot_right:checked)) .right-hover{
+	opacity: 1;
+}
+/* ホーム：メニュー（机の引き出し）：クリック時の処理 */
+.menu:has(#slot_left:checked) .left-open{
+	opacity: 1;
+	z-index: 10;
+}
+.menu:has(#slot_center:checked) .center-open{
+	opacity: 1;
+	z-index: 10;
+}
+.menu:has(#slot_right:checked) .right-open{
+	opacity: 1;
+	z-index: 10;
 }
