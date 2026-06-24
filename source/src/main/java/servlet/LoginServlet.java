@@ -49,6 +49,7 @@ public class LoginServlet extends HttpServlet {
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
 			session.setAttribute("id", new LoginUser(userId));
+			response.sendRedirect(request.getContextPath() + "/SliderServlet");
 			
 //			Daily_recordsDAO dao = new Daily_recordsDAO();
 //			Daily_record record = dao.select(userId);
