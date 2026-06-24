@@ -14,11 +14,13 @@
 
             <img src="images_back/album.png" class="background">
 
-            <div class="album">
-                <img src="images_back/search_all.png" class="album-img">
-            </div>
+            
 
             <div class="album-contents">
+
+			<div class="album">
+                <img src="images_back/search_all.png" class="album-img">
+            </div>
 
 			   <!-- 左ページ -->
 			   <div class="page left-page">
@@ -38,7 +40,7 @@
 			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
-			       <a href="#" class="next-arrow">➔</a>
+			       <!-- <a href="#" class="next-arrow">➔</a>  -->
 			   </div>
 			
 			</div>

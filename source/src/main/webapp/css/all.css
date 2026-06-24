@@ -25,7 +25,7 @@ body {
 .album {
     width: 1800px;
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%; /* 49%から50%に微調整 */
     transform: translate(-50%, -50%);
 }
@@ -53,9 +53,10 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column; /* 写真を縦に2通並べる */
-    gap: 30px;
+    gap: 10px;
     align-items: center;
     position: relative;
+    top: -20%;
 }
 
 /* 右側に寄せる */
@@ -66,7 +67,7 @@ body {
 
 /* 写真のカード（白い枠の台紙） */
 .photo-card {
-    width: 70%;
+    width: 55%;
     background-color: #fff;
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -86,8 +87,8 @@ body {
 /* 写真右上にある日付スタンプ */
 .date-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 30px;
+    right: 40px;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2px 6px;
     font-size: 14px;
