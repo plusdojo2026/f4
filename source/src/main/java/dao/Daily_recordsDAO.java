@@ -19,12 +19,14 @@ public class Daily_recordsDAO {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         // DB接続
-        conn = DriverManager.getConnection(
-        		"jdbc:mysql://localhost:3306/f4?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9","root","password"
-        );
+		// データベースに接続する
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
+				+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+				"root", "password");
+
 
         // 今日のデータ取得
-        String sql = "SELECT * FROM daily_records WHERE user_id = ? AND create_date = CURDATE()";
+        String sql = "SELECT * FROM daily_records WHERE user_id = ? AND create_date = CURRENT_DATE";
         PreparedStatement pStmt = conn.prepareStatement(sql);
         pStmt.setString(1, userId);
 
