@@ -1,5 +1,6 @@
 package servlet;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -9,6 +10,7 @@ import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -16,7 +18,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+
+import dto.LoginUser;
 /**
  * Servlet implementation class EditServlet
  */
@@ -40,7 +45,13 @@ public class EditServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		
+		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("id");
+
+		if (user == null) {
+			response.sendRedirect(request.getContextPath() + "/LoginServlet");
+			return;
+		}
 		//　落書きページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/edit.jsp");
 		dispatcher.forward(request, response);
@@ -75,6 +86,12 @@ public class EditServlet extends HttpServlet {
                 savePath,
                 StandardCopyOption.REPLACE_EXISTING);
         
+        BufferedImage image = ImageIO.read(in);
+
+        System.out.println(
+            image.getWidth() + " x " + image.getHeight()
+        );
+        System.out.println("sample2で保存します");
         
 
         // ホーム画面にフォワードする
