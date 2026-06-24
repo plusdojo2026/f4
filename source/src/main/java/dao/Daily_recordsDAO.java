@@ -68,7 +68,7 @@ public class Daily_recordsDAO {
 					"root", "password");
 
 			// SQL文を準備する（character_id削除）
-			String sql = "INSERT INTO daily_records (user_id, body, mind, create_date,character_id) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
+			String sql = "INSERT INTO daily_records (user_id, body, mind, character_id, create_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
