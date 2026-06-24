@@ -14,7 +14,33 @@
 <body>
 	<div class="container">
 	<h1>ホーム画面</h1>
+	<div class="desk"></div>
 	<div class="menu">
+	<!-- キャラ画像の表示 -->
+	<c:forEach var="character" items="${characterList }">
+	<img 
+		id="characterImage"
+		src="${pageContext.request.contextPath}/${character.characterMainImg}" 
+		alt="キャラ画像" 
+		width="500" height="300"
+	>
+		
+		
+	<!-- 画像切り替え用の画像リスト -->
+    <div id="imageList" style="display: none;">
+
+        <!-- 最初のメイン画像もリストに入れる -->
+        <span data-img="${pageContext.request.contextPath}/${character.characterMainImg}"></span>
+
+        <!-- 差分画像リスト -->
+        <c:forEach var="sub" items="${characterSubList}">
+            <span data-img="${pageContext.request.contextPath}/${sub.characterSubImg}"></span>
+        </c:forEach>
+
+    </div>
+		
+		
+	</c:forEach>
 	<!-- 引き出しの画像 -->
 	<!-- 画像：引き出し（左） -->
 		<img src="images_home/slot_left_hover_1980.png" alt="" class="slot-img left-hover">
