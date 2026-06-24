@@ -21,6 +21,7 @@ h1,p{
 	background-color:pink;/* 背景色 */
 	padding:5px 10px;/* 文字の周りに余白を作る */
 	border-radius:5px;/* 角を少し丸くする */
+	font-size: 50px;
 }
 
 a{
@@ -29,4 +30,5 @@ a{
     border-radius: 8px;
     display: inline-block;
     margin: 10px auto;
+    font-size: 30px;
 }
