@@ -23,7 +23,11 @@
 			   <div class="page left-page">
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
 			           <div class="photo-card">
-							${record.createDate}<br>
+							<div class="date-font">
+								<span class="date-badge date-font">
+							        ${record.createDate}
+							    </span>
+							</div>
 			               <!--  <span class="date-badge">
 			                   ${record.createDate}
 			               </span>
