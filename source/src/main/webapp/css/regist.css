@@ -13,6 +13,7 @@ body {
 h1 {
     text-align: center;
     background-color: #CBE2FE;
+    font-size: 50px;
 }
 html, body {
 	height: 100%;
@@ -30,6 +31,16 @@ label {
 div{
     text-align: center;
 }
+input[type="text"] {
+    width: 300px;  /* 横幅を300pxにする */
+    height: 30px;  /* 高さを40pxにする */
+}
+
+input[type="password"] {
+    width: 300px;  /* 横幅を300pxにする */
+    height: 30px;  /* 高さを40pxにする */
+}
+/* 
 /* 入力欄全体（div）の装飾 */
 form div {
     margin-bottom: 15px;     /* 項目同士の隙間を空ける */
@@ -66,12 +77,16 @@ form {
     background-color: #4a90e2; /* 青色 */
     color: white;
     font-weight: bold;
+    width: 200px;  /* 横幅を300pxにする */
+    height: 45px;  
 }
 
 /* リセットボタンの色 */
 .button-group input[name="reset"] {
     background-color: #FFF000; /* 黄色 */
     color: #333;
+    width: 200px;  /* 横幅を300pxにする */
+    height: 45px;  
 }
 
 /* ボタンに乗せた時の演出 */
