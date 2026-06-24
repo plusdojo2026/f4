@@ -23,12 +23,12 @@
 			   <div class="page left-page">
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
 			           <div class="photo-card">
-							<input type="date" name="department" value="${record.createDate}"><br>
+							${record.createDate}<br>
 			               <!--  <span class="date-badge">
 			                   ${record.createDate}
 			               </span>
 							-->
-			               <img src="images_screenshot/${record.editScreenShot}" alt="写真" class="no-calendar">
+			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
 			   </div>
