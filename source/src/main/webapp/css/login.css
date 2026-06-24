@@ -11,17 +11,19 @@ body {
 	background-attachment: fixed; /* スクロールしても動かない */
 	text-align: center;
 }
-/* h1タグを中央寄せ */
-h1 {
-    text-align: center;
-    background-color: #CBE2FE;
-}
+
 .regist-container {
     background-color: rgba(255, 255, 255, 0.8); /* ここで好きな色を指定 */
     padding: 10px;
     border-radius: 8px;
     display: inline-block; /* text-align: center の影響でこれで中央に来ます */
     margin: 10px auto;     /* 上下10px、左右は自動で中央へ */
+}
+
+.logo img {
+    width: 1000px;  /* 横幅を300pxにする */
+    height: auto;  /* 高さは自動調整されて比率が維持されます */
+    margin-bottom: -280px;
 }
 /* divの中身（pタグ内のリンク）を中央寄せ */
 div{

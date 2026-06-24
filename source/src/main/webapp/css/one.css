@@ -23,7 +23,7 @@ body {
 
 /* アルバム全体（本の背景） */
 .album {
-    width: 600px;
+    width: 1000px;
     position: absolute;
     top: 50%;
     left: 50%; /* 49%から50%に微調整 */
