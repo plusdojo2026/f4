@@ -25,10 +25,23 @@ public class SearchDAO {
 					"root", "password");
 
 			// SQL文を準備する
-			String sql = "SELECT * "
-					+ "FROM daily_records "
-					+ "WHERE user_id =? "
-					+ "AND create_date=?";
+			String sql;
+			
+
+			if(record.getCreateDate() != null) {
+                // 日付が入力されている場合：日付で絞り込み
+                sql = "SELECT * "
+                    + "FROM daily_records "
+                    + "WHERE user_id = ? "
+                    + "AND create_date = ?";
+            } else {
+                // 日付が未入力の場合：ログインユーザーの全件検索
+                sql = "SELECT * "
+                    + "FROM daily_records "
+                    + "WHERE user_id = ?";
+            }
+
+					
 //					+ "AND create_date LIKE ? OR ? IS NULL";
 //					+ "WHERE user_id =? AND character_id =? AND body =? "
 //					+ "AND mind =? AND create_date LIKE ? AND default_screenshot LIKE ? AND edit_screenshot LIKE ? ";
@@ -49,9 +62,7 @@ public class SearchDAO {
 //			}
 			if (record.getCreateDate() != null) {
 					pStmt.setDate(2, record.getCreateDate());
-			} else {
-					pStmt.setDate(2, null);
-			}
+			} 
 //			if (record.getDefaultScreenShot() != null) {
 //				pStmt.setString(6, "%" + record.getDefaultScreenShot() + "%");
 //			} else {
