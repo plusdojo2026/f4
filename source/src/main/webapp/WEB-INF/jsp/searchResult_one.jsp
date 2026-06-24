@@ -14,7 +14,7 @@
             <img src="images_back/album.png" class="background">
 
             <div class="album">
-                <img src="images_back/search_one.png" class="album-img">
+                <img src="images_back/search_one1.png" class="album-img">
             </div>
 
             <div class="album-contents">
