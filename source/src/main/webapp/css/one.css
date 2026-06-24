@@ -96,3 +96,16 @@ body {
     font-weight: bold;
     color: #333;
 }
+
+.return-btn{
+	background-image: url('/f4/images_back/RETURN.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width:200px;
+	height:150px;
+	border-radius:60px;
+	background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
