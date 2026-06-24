@@ -103,9 +103,7 @@ opacity: 1;
 opacity: 1;
 }
 
-/* =========================
-  クリック表示
-========================= */
+
 
 .menu:has(#slot_left:checked) .left-open {
 opacity: 1;
