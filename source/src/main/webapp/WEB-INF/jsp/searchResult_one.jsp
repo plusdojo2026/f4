@@ -28,7 +28,7 @@
 			                   ${record.createDate}
 			               </span>
 							-->
-			               <input type="text" name="department" value="${record.createDate}" placeholder="yyyy/mm/dd"><br>
+			               <img src="images_screenshot/${record.editScreenShot}" alt="写真" class="no-calendar">
 			           </div>
 			       </c:forEach>
 			   </div>
