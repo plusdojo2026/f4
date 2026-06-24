@@ -54,7 +54,6 @@ public class DailyCharacterServlet extends HttpServlet {
 		int body = Integer.parseInt(request.getParameter("body"));
 		int mind = Integer.parseInt(request.getParameter("mind"));
 		
-		
 		int characterId = 0;
 		Random rand = new Random();
 		
