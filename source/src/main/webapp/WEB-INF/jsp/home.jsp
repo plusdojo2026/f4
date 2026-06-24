@@ -14,6 +14,7 @@
 <body>
 	<div class="container">
 	<h1>ホーム画面</h1>
+	<div class="desk"></div>
 	<div class="menu">
 	<!-- 引き出しの画像 -->
 	<!-- 画像：引き出し（左） -->
