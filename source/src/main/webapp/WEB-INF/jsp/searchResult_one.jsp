@@ -14,7 +14,7 @@
             <img src="images_back/album.png" class="background">
 
             <div class="album">
-                <img src="images_back/search_one.png" class="album-img">
+                <img src="images_back/search_one1.png" class="album-img">
             </div>
 
             <div class="album-contents">
@@ -23,9 +23,11 @@
 			   <div class="page left-page">
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
 			           <div class="photo-card">
-			               <span class="date-badge">
+							<input type="date" name="department" value="${record.createDate}"><br>
+			               <!--  <span class="date-badge">
 			                   ${record.createDate}
 			               </span>
+							-->
 			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
