@@ -23,7 +23,8 @@
 
 	<!-- 背景画像 -->
 	<div id="background">
-		<img src="images_back/main.png" alt="">
+		<!-- <img src="images_home/home1980.png" alt=""> -->
+		<img src="images_screenshot/2026-06-24.png" alt="">
 	</div>
 	
 	<!-- キャラクター画像 
@@ -37,15 +38,13 @@
 	</c:forEach>
 	-->
 	
-	<div id="background">
+	<div id="characterImage">
 		<img src="images/maamaa.png" alt="">
 	</div>
 	
 	<!-- キャンバス -->
     <canvas
         id="canvas"
-        width="1920"
-        height="1080"
         style="border:1px solid #ccc;">
     </canvas>
 </div>
@@ -82,7 +81,9 @@ function toggleColor() {
 /* スクリーンショット保存機能 */
 function saveScreenshot() {
 	/* captureAreaを保存 */
-    html2canvas(document.getElementById("captureArea"))
+    html2canvas(document.getElementById("captureArea"),{width: 1920,height: 1080})
+        
+
         .then(function(screenshot) {
         
         	screenshot.toBlob(function(blob) {
@@ -101,6 +102,21 @@ function saveScreenshot() {
 
         });
 }
+
+//キャンバスの線の位置を合わせる
+function resizeCanvas() {
+    const ratio = Math.max(window.devicePixelRatio || 1, 1);
+
+    canvas.width = canvas.offsetWidth * ratio;
+    canvas.height = canvas.offsetHeight * ratio;
+
+    canvas.getContext("2d").scale(ratio, ratio);
+
+    signaturePad.clear();
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
 </script>
 
 </body>
