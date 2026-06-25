@@ -69,7 +69,7 @@
 		<!-- 保存ボタン -->
 		<div id="save">
 			<!-- <button onclick="saveScreenshot()">保存</button> -->
-			<img src="images_back/CAMRA.png" alt="色切替" onclick="saveScreenshot()">
+			<img src="images_back/CAMRA.png" alt="保存" onclick="saveScreenshot()">
 		</div>
 	
 </div>
