@@ -18,14 +18,12 @@
 	<!-- キャラ画像の表示 -->
 	<div class="character">
 	
-	<c:forEach var="e" items="${record}">
-				<c:if test="${not empty e.editScreenshot}">
-					<div class="edit">
-		   			<img src="C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot/${e.userId}/${e.editScreenshot}" />
-					</div>
-					
-				</c:if>
-	</c:forEach>
+		<c:if test="${not empty edit.editScreenShot}">
+			<div class="edit">
+		   		<img src="${pageContext.request.contextPath}/images_screenshot/${edit.userId}/${edit.editScreenShot}"/>
+			</div>		
+		</c:if>
+				
 		<c:forEach var="character" items="${characterList }">
 			
 			<img 
