@@ -182,3 +182,9 @@ opacity: 1;
 	position:absolute;
 	z-index: 1000;
 }
+
+.edit{
+	z-index:9999;
+	width: 1920px;
+	height: 1080px;
+}
