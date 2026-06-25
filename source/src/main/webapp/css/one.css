@@ -100,7 +100,7 @@ body {
 .back{
 	position:absolute;
 	z-index: 1000;
-	bottom: 50px;
+	bottom: 80px;
 	left: 150px;
 }
 
