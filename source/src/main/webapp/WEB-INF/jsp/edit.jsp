@@ -11,68 +11,70 @@
 </head>
 <body>
 
-<h1>落書き画面</h1>
-
-<!-- 色切り替えボタン -->
-<div id="pen">
-	<!-- <button onclick="toggleColor()">色切替</button> -->
-	<img src="images_home/ank_right.png" alt="色切替" onclick="toggleColor()">
-</div>
-
-<!-- スクリーンショットエリア -->
-<div id="captureArea">
-
-	<!-- 背景画像 -->
-	<div id="background">
-		<img src="images_home/home1980.png" alt="">
+<div class="wrapper">
+	<!-- スクリーンショットエリア -->
+	<div id="captureArea">
+	
+		<!-- 背景画像 -->
+		<div id="background">
+			<img src="images_home/home1980.png" alt="">
+		</div>
+		
+		<!-- キャラクター画像 -->
+		<c:forEach var="character" items="${characterList }">
+			<img 
+			id="characterImage"
+			src="${pageContext.request.contextPath}/${character.characterMainImg}" 
+			alt="キャラ画像" 
+			width="500" height="300"
+			>
+			<!-- 画像切り替え用の画像リスト -->
+	    	<div id="imageList" style="display: none;">
+	        <!-- 最初のメイン画像もリストに入れる -->
+	        <span data-img="${pageContext.request.contextPath}/${character.characterMainImg}"></span>
+	
+	        <!-- 差分画像リスト -->
+	        <c:forEach var="sub" items="${characterSubList}">
+	            <span data-img="${pageContext.request.contextPath}/${sub.characterSubImg}"></span>
+	        </c:forEach>
+	    	</div>
+		</c:forEach>
+		
+		<!-- キャンバス -->
+	    <canvas
+	        id="canvas"
+	        style="border:1px solid #ccc;">
+	    </canvas>
 	</div>
 	
-	<!-- キャラクター画像 -->
-	<c:forEach var="character" items="${characterList }">
-		<img 
-		id="characterImage"
-		src="${pageContext.request.contextPath}/${character.characterMainImg}" 
-		alt="キャラ画像" 
-		width="500" height="300"
-		>
-		<!-- 画像切り替え用の画像リスト -->
-    	<div id="imageList" style="display: none;">
-        <!-- 最初のメイン画像もリストに入れる -->
-        <span data-img="${pageContext.request.contextPath}/${character.characterMainImg}"></span>
-
-        <!-- 差分画像リスト -->
-        <c:forEach var="sub" items="${characterSubList}">
-            <span data-img="${pageContext.request.contextPath}/${sub.characterSubImg}"></span>
-        </c:forEach>
-    	</div>
-	</c:forEach>
+	<!-- キャンバスに描画できるライブラリ -->
+	<script src="https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/dist/signature_pad.umd.min.js"></script>
 	
-	<!-- キャンバス -->
-    <canvas
-        id="canvas"
-        style="border:1px solid #ccc;">
-    </canvas>
+	<!-- スクリーンショットのライブラリ -->
+	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+	
+	<div class="edit-bottom">
+		<!-- 戻るボタン -->
+		<div id="return">
+			<!-- <a href="DailyCharacterServlet">戻る</a> -->
+			<a href="DailyCharacterServlet"><img src="images_back/RETURN.png" alt="戻る"></a>
+		</div>
+		
+		<!-- 色切り替えボタン -->
+		<div id="pen">
+			<!-- <button onclick="toggleColor()">色切替</button> -->
+			<img src="images_back/PEN.png" alt="色切替" onclick="toggleColor()">
+		</div>
+		
+		<!-- 保存ボタン -->
+		<div id="save">
+			<!-- <button onclick="saveScreenshot()">保存</button> -->
+			<img src="images_back/CAMRA.png" alt="色切替" onclick="saveScreenshot()">
+		</div>
+	
 </div>
 
-<!-- キャンバスに描画できるライブラリ -->
-<script src="https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/dist/signature_pad.umd.min.js"></script>
-
-<!-- スクリーンショットのライブラリ -->
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
-<!-- 保存ボタン -->
-<div id="save">
-	<!-- <button onclick="saveScreenshot()">保存</button> -->
-	<img src="images_back/CAMRA.png" alt="色切替" onclick="saveScreenshot()">
 </div>
-
-<!-- 戻るボタン -->
-<div id="return">
-	<!-- <a href="DailyCharacterServlet">戻る</a> -->
-	<a href="DailyCharacterServlet"><img src="images_back/RETURN.png" alt="戻る"></a>
-</div>
-
-
 
 
 
