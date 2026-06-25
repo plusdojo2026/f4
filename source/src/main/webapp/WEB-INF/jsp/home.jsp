@@ -69,6 +69,7 @@
 	<a href="/f4/SearchServlet" class="ank-left"></a> <!-- アルバム -->
 	<a href="/f4/QrServlet" class="ank-center"></a>　<!-- QR（手紙） -->
 	<a href="/f4/EditServlet" class="ank-right"></a>　<!-- ペン -->
+	<a href="/f4/DeleteServlet" class="delete"><img src="images_back/clock.png" alt="削除"></a>
 	</div>
 	
 

@@ -178,3 +178,7 @@ opacity: 1;
     pointer-events: auto;
 }
 
+.delete{
+	position:absolute;
+	z-index: 1000;
+}
