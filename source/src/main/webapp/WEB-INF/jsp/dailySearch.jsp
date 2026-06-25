@@ -41,10 +41,15 @@
                 <div class="btn">
                     <input type="submit" value="検索" class="button">
                 </div>
-
+			<!-- 戻るボタン -->
+			<div id="return">
+				<!-- <a href="DailyCharacterServlet">戻る</a> -->
+				<a href="DailyCharacterServlet"><img src="images_back/RETURN.png" alt="戻る"></a>
+			</div>
             </form>
-
+			
         </div>
+        
     </div>
 </body>
 </html>
