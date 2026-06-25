@@ -27,7 +27,7 @@
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
 			           <div class="photo-card">
 			               <span class="date-badge">${record.createDate}</span>
-			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
+			               <img src="images_screenshot/${record.userId}/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
 			   </div>
@@ -41,9 +41,9 @@
 			           </div>
 			       </c:forEach>
 			       <!-- <a href="#" class="next-arrow">➔</a>  -->
-			   	<form method="GET" action="/f4/SearchServlet">
-					<button type="submit" class="return-btn"></button>
-		        </form>
+			   <form method="GET" action="/f4/SearchServlet">
+			   		<button type="submit" class="return-btn"></button>
+        	   </form>
 			   </div>
 			</div>
         </div>
