@@ -59,7 +59,7 @@ public class QrImageServlet extends HttpServlet {
         	                 request.getServerPort() +
         	                 request.getContextPath();
 
-        	String qrText = baseUrl + "/HomeServlet?userId=" + userId;
+        	String qrText = baseUrl + "/DailyCharacterServlet?userId=" + userId;
         	
         	//　サイズの設定（任意）。
             int size = 250;
