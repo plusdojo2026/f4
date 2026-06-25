@@ -17,7 +17,17 @@
 	<div class="desk"></div>
 	<!-- キャラ画像の表示 -->
 	<div class="character">
+	
+	<c:forEach var="e" items="${record}">
+				<c:if test="${not empty e.editScreenshot}">
+					<div class="edit">
+		   			<img src="C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot/${e.userId}/${e.editScreenshot}" />
+					</div>
+					
+				</c:if>
+	</c:forEach>
 		<c:forEach var="character" items="${characterList }">
+			
 			<img 
 			id="characterImage"
 			src="${pageContext.request.contextPath}/${character.characterMainImg}" 
