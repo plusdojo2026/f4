@@ -30,9 +30,7 @@
 		
         <div class="album-contents">
 
-			<a href="/f4/DailyCharacterServlet" class="back">
-			<img src="images_back/RETURN.png" alt="戻る" width="150" height="150">
-			</a>
+
 
             <form action="/f4/SearchServlet" method="post">
 
@@ -51,7 +49,10 @@
             </form>
 			
         </div>
-        
+
     </div>
+           <a href="/f4/DailyCharacterServlet" class="back">
+			<img src="images_back/RETURN.png" alt="戻る" width="150" height="150">
+		</a>
 </body>
 </html>
