@@ -93,12 +93,29 @@ background: #000;
     cursor: pointer;
 }
 
-#return {
+#save {
     position: absolute;
 
     /* 左上に配置 */
     top: 20px;
     right: 20px;
+
+    /* 最前面 */
+    z-index: 9999;
+}
+
+#save img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+}
+
+#return {
+    position: absolute;
+
+    /* 左上に配置 */
+    bottom: 20px;
+    left: 20px;
 
     /* 最前面 */
     z-index: 9999;
