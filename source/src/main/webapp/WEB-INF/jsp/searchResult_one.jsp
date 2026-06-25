@@ -29,7 +29,7 @@
 			                   ${record.createDate}
 			               </span>
 							-->
-			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
+			               <img src="images_screenshot/${record.userId}/${record.editScreenShot}" alt="写真">
 			           </div>
 						<form method="GET" action="/f4/SearchServlet">
 							<button type="submit" class="return-btn"></button>
