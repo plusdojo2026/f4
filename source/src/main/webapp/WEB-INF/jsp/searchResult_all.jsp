@@ -21,7 +21,10 @@
 			<div class="album">
                 <img src="images_back/search_all.png" class="album-img">
             </div>
-
+			
+			<a href="/f4/SearchServlet" class="back">
+			<img src="images_back/RETURN.png" alt="戻る" width="200" height="200">
+			</a>
 			   <!-- 左ページ -->
 			   <div class="page left-page">
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
@@ -41,9 +44,7 @@
 			           </div>
 			       </c:forEach>
 			       <!-- <a href="#" class="next-arrow">➔</a>  -->
-			   <form method="GET" action="/f4/SearchServlet">
-			   		<button type="submit" class="return-btn"></button>
-        	   </form>
+			  
 			   </div>
 			</div>
         </div>
