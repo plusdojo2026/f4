@@ -21,14 +21,14 @@ import dto.LoginUser;
 /**
  * Servlet implementation class DailyCharacterServlet
  */
-@WebServlet("/DailyCharacterServlet")
-public class DailyCharacterServlet extends HttpServlet {
+@WebServlet("/DeleteServlet")
+public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DailyCharacterServlet() {
+    public DeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,14 +44,7 @@ public class DailyCharacterServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		LoginUser user = (LoginUser) session.getAttribute("id");
 		
-		// Qrで入ってくる人のため
-		String qrUserId = request.getParameter("userId");	
-		if (user == null && qrUserId != null) {
-			LoginUser qrUser = new LoginUser();
-			qrUser.setUserId(qrUserId);
-			session.setAttribute("id",qrUser);
-			user = qrUser;
-		}
+		
 		
 		// もしユーザーID取得なし、つまり、うまくログインできていないなら、ログイン画面へ帰ってもらう。
 		if (user == null) {
@@ -62,26 +55,10 @@ public class DailyCharacterServlet extends HttpServlet {
 		// userId取得
 		String userId = user.getUserId();
 		
-		// characterId検索
 		Daily_recordsDAO dao = new Daily_recordsDAO();
-		Daily_record record = dao.select(userId);
+		dao.delete(userId);
 		
-		int characterId = record.getCharacterId();
-		System.out.println(characterId);
-		
-		CharactersDAO charaDao= new CharactersDAO();
-		List<Character> characterList = charaDao.select(characterId);
-		
-		// 検索結果をリクエストスコープに格納する
-		//request.setAttribute("characterList", characterList);
-		session.setAttribute("characterList", characterList);
-		
-		Character_subsDAO subDao = new Character_subsDAO();
-		List<Character_sub> characterSubList = subDao.select(characterId);
-		
-		request.setAttribute("characterSubList",characterSubList);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/slider.jsp");
 		dispatcher.forward(request, response);
 	}
 
