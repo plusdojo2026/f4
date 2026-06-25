@@ -18,6 +18,10 @@
                 <img src="images_back/search_one1.png" class="album-img">
             </div>
 
+			<a href="/f4/SearchServlet" class="back">
+			<img src="images_back/RETURN.png" alt="戻る" width="200" height="200">
+			</a>
+
 			   <!-- 左ページ -->
 			   <div class="page center-page">
 			       <c:forEach var="record" items="${recordList}" begin="0" end="1">
@@ -31,9 +35,6 @@
 							-->
 			               <img src="images_screenshot/${record.userId}/${record.editScreenShot}" alt="写真">
 			           </div>
-						<form method="GET" action="/f4/SearchServlet">
-							<button type="submit" class="return-btn"></button>
-	                    </form>
 			       </c:forEach>
 			   </div>
 	</div>
