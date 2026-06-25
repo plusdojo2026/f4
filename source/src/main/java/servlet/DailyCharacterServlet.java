@@ -76,8 +76,6 @@ public class DailyCharacterServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		//request.setAttribute("characterList", characterList);
 		session.setAttribute("characterList", characterList);
-		session.setAttribute("edit", record);
-		
 		
 		Character_subsDAO subDao = new Character_subsDAO();
 		List<Character_sub> characterSubList = subDao.select(characterId);
