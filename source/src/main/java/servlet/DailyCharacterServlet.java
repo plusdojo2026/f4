@@ -44,13 +44,22 @@ public class DailyCharacterServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		LoginUser user = (LoginUser) session.getAttribute("id");
 		
+		// Qrで入ってくる人のため
+		String qrUserId = request.getParameter("userId");	
+		if (user == null && qrUserId != null) {
+			LoginUser qrUser = new LoginUser();
+			qrUser.setUserId(qrUserId);
+			session.setAttribute("id",qrUser);
+			user = qrUser;
+		}
+		
 		// もしユーザーID取得なし、つまり、うまくログインできていないなら、ログイン画面へ帰ってもらう。
 		if (user == null) {
 			response.sendRedirect(request.getContextPath() + "/LoginServlet");
 			return;
 		}
 		
-		// userId取得（QRに組み込むため）
+		// userId取得
 		String userId = user.getUserId();
 		
 		// characterId検索
