@@ -17,13 +17,6 @@
 	<div class="desk"></div>
 	<!-- キャラ画像の表示 -->
 	<div class="character">
-	
-		<c:if test="${not empty edit.editScreenShot}">
-			<div class="edit">
-		   		<img src="${pageContext.request.contextPath}/images_screenshot/${edit.userId}/${edit.editScreenShot}"/>
-			</div>		
-		</c:if>
-				
 		<c:forEach var="character" items="${characterList }">
 			
 			<img 
