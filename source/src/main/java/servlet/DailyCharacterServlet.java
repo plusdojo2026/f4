@@ -59,9 +59,10 @@ public class DailyCharacterServlet extends HttpServlet {
 			return;
 		}
 		
+		
 		// userId取得
 		String userId = user.getUserId();
-		
+
 		// characterId検索
 		Daily_recordsDAO dao = new Daily_recordsDAO();
 		Daily_record record = dao.select(userId);
@@ -75,11 +76,15 @@ public class DailyCharacterServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		//request.setAttribute("characterList", characterList);
 		session.setAttribute("characterList", characterList);
+		session.setAttribute("edit", record);
+		
 		
 		Character_subsDAO subDao = new Character_subsDAO();
 		List<Character_sub> characterSubList = subDao.select(characterId);
 		
 		request.setAttribute("characterSubList",characterSubList);
+		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 		dispatcher.forward(request, response);
