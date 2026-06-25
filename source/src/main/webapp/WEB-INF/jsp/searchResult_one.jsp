@@ -19,7 +19,7 @@
             </div>
 
 			<a href="/f4/SearchServlet" class="back">
-			<img src="images_back/RETURN.png" alt="戻る" width="200" height="200">
+			<img src="images_back/RETURN.png" alt="戻る" width="150" height="150">
 			</a>
 
 			   <!-- 左ページ -->
