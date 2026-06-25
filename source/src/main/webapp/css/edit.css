@@ -11,7 +11,7 @@ body {
 margin: 0;
 display: flex;
 justify-content: center;
-background: #000;
+background: #F7EEE7;
 }
 
 * {
@@ -23,6 +23,7 @@ background: #000;
     width: 1920px;
     height: 1080px;
     overflow: hidden;
+    
 }
 
 
@@ -63,6 +64,7 @@ background: #000;
     transform: translate(-50%, -50%);
     z-index: 2;
     pointer-events: none;
+    object-fit: cover; 
 }
 
 /* キャンバス（一番前） */
@@ -75,54 +77,42 @@ background: #000;
     z-index: 3;
 }
  
-/* ペンのデザイン */  
-#pen {
-    position: absolute;
-
-    /* 左上に配置 */
-    top: 20px;
-    left: 20px;
-
-    /* 最前面 */
-    z-index: 9999;
-}
 
 #pen img {
-    width: 600px;
-    height: auto;
+width: 300px;
+height: 300px;
+object-fit: cover; 
     cursor: pointer;
 }
 
-#save {
-    position: absolute;
-
-    /* 左上に配置 */
-    top: 20px;
-    right: 20px;
-
-    /* 最前面 */
-    z-index: 9999;
-}
 
 #save img {
-    width: 200px;
-    height: auto;
+width: 400px;
+height: 300px;
+object-fit: cover; 
     cursor: pointer;
-}
-
-#return {
-    position: absolute;
-
-    /* 左上に配置 */
-    bottom: 20px;
-    left: 20px;
-
-    /* 最前面 */
-    z-index: 9999;
 }
 
 #return img {
-    width: 500px;
-    height: auto;
+width: 300px;
+height: 300px;
+object-fit: cover; /* 重要 */
     cursor: pointer;
+}
+
+.edit-bottom {
+	background-image: url('/f4/images_back/desk.png');
+	height:400px;
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 15px 20px;
+	place-items: center;
+	
+}
+
+.wrapper{
+	width:1920px;
+	height:auto;
 }
