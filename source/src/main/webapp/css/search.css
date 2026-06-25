@@ -95,3 +95,22 @@ body {
     font-size: 14px;
     /* border: none;  */
 }
+
+#return {
+    position: absolute;
+
+    /* 左上に配置 */
+    top: -150px;
+    right:150px;
+
+    /* 最前面 */
+    z-index: 9999;
+}
+
+#return img {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+    position: absolute;
+    left: 40px;
+}

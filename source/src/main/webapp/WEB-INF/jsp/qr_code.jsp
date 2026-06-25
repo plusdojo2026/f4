@@ -11,7 +11,11 @@
 
 <h1>QR画面</h1>
 
-<p><a href="/f4/DailyCharacterServlet">戻る</a></p>
+<!-- 戻るボタン -->
+<div id="return">
+	<!-- <a href="DailyCharacterServlet">戻る</a> -->
+	<a href="DailyCharacterServlet"><img src="images_back/RETURN.png" alt="戻る"></a>
+</div>
 <img src="<%= request.getContextPath() %>/QrImageServlet" alt="QRコードの表示" id="qr">
 </body>
 </html>
