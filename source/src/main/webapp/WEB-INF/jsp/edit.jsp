@@ -60,12 +60,21 @@
 <!-- スクリーンショットのライブラリ -->
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-<button onclick="saveScreenshot()">保存</button>
+<!-- 保存ボタン -->
+<div id="save">
+	<!-- <button onclick="saveScreenshot()">保存</button> -->
+	<img src="images_back/CAMRA.png" alt="色切替" onclick="saveScreenshot()">
+</div>
 
+<!-- 戻るボタン -->
 <div id="return">
 	<!-- <a href="DailyCharacterServlet">戻る</a> -->
 	<a href="DailyCharacterServlet"><img src="images_back/RETURN.png" alt="戻る"></a>
 </div>
+
+
+
+
 
 <script>
 
