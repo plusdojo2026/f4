@@ -37,7 +37,7 @@
 			       <c:forEach var="record" items="${recordList}" begin="2" end="3">
 			           <div class="photo-card">
 			               <span class="date-badge">${record.createDate}</span>
-			               <img src="images_screenshot/${record.editScreenShot}" alt="写真">
+			               <img src="images_screenshot/${record.userId}/${record.editScreenShot}" alt="写真">
 			           </div>
 			       </c:forEach>
 			       <!-- <a href="#" class="next-arrow">➔</a>  -->
