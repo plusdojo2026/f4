@@ -26,7 +26,7 @@
 			id="characterImage"
 			src="${pageContext.request.contextPath}/${character.characterMainImg}" 
 			alt="キャラ画像" 
-			width="500" height="300"
+			width="900px" height="550px"
 			>
 			<!-- 画像切り替え用の画像リスト -->
 	    	<div id="imageList" style="display: none;">
