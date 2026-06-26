@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ぱぱっとコミュ！ | ホーム画面</title>
 <link rel="stylesheet" href="css/home.css">
 <!-- JavaScriptファイルを読み込む -->
 <script src="${pageContext.request.contextPath}/javascript/character.js" defer></script>
@@ -23,7 +23,7 @@
 			id="characterImage"
 			src="${pageContext.request.contextPath}/${character.characterMainImg}" 
 			alt="キャラ画像" 
-			width="500" height="300"
+			width="1000px" height="600px"
 			>
 			<!-- 画像切り替え用の画像リスト -->
     		<div id="imageList" style="display: none;">
@@ -70,7 +70,8 @@
 	<a href="/f4/SearchServlet" class="ank-left"></a> <!-- アルバム -->
 	<a href="/f4/QrServlet" class="ank-center"></a>　<!-- QR（手紙） -->
 	<a href="/f4/EditServlet" class="ank-right"></a>　<!-- ペン -->
-	<a href="/f4/DeleteServlet" class="delete"><img src="images_back/clock.png" alt="削除"></a>
+	<a href="/f4/DeleteServlet" class="delete"><img src="images_back/clock.png" alt="削除"
+	width="200px" height="200px"></a>
 	</div>
 	
 
