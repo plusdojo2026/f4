@@ -38,8 +38,8 @@ background-position: center;
     transform: translate(-50%, -50%);
     z-index: 15;
     pointer-events: none;
+    
 }
-
 /* メニュー（完全一致で重ねる） */
 .menu {
 position: absolute;
