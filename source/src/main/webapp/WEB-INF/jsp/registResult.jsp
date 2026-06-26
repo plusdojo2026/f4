@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>新規登録結果画面</title>
+<title>ぱぱっとコミュ！｜新規登録結果画面</title>
 <link rel="stylesheet" href="css/registResult.css">
 </head>
 <body>
