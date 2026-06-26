@@ -20,9 +20,9 @@ public class Daily_recordsDAO {
 
         // DB接続
 		// データベースに接続する
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
-				+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
-				"root", "password");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
+				+ "characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+				"f4", "WmWxqN4QXsS7srCL");
 
 
         // 今日のデータ取得
@@ -65,8 +65,8 @@ public class Daily_recordsDAO {
 
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/f4?"
-					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
-					"root", "password");
+					+ "characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"f4", "WmWxqN4QXsS7srCL");
 
 			// SQL文を準備する（character_id削除）
 			String sql = "INSERT INTO daily_records (user_id, body, mind, character_id, create_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
