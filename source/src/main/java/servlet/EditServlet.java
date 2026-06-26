@@ -85,7 +85,8 @@ public class EditServlet extends HttpServlet {
         InputStream in = part.getInputStream();
         
         //保存先を取得 //ユーザーでファイルを分ける必要がある。/images_screenshotの下の階層に
-        String base = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
+        //String base = "C:/plusdojo2026/f4/source/src/main/webapp/images_screenshot";
+        String base = getServletContext().getRealPath("/images_screenshot");
         
         // ユーザーIDのフォルダ
         Path userFolder = Paths.get(base, userId);
