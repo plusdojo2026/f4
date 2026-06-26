@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>スライダー入力画面</title>
+<title>ぱぱっとコミュ！｜スライダー入力画面</title>
 <link rel="stylesheet" href="css/slider.css">
 </head>
 <body>
