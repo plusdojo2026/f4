@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ぱぱっとコミュ！ | ホーム画面</title>
+<title>ぱぱっとコミュ！｜ホーム画面</title>
 <link rel="stylesheet" href="css/home.css">
 <!-- JavaScriptファイルを読み込む -->
 <script src="${pageContext.request.contextPath}/javascript/character.js" defer></script>
