@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ぱぱっとコミュ！|未入力結果画面</title>
+<title>ぱぱっとコミュ！｜全結果画面</title>
 <link rel="stylesheet" href="/f4/css/all.css">
 </head>
 <body id="top">
