@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ぱぱっとコミュ！｜QR画面</title>
 <link rel="stylesheet" href="css/qr_code.css">
 </head>
 <body>
