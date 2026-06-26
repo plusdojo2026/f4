@@ -23,7 +23,7 @@
 			id="characterImage"
 			src="${pageContext.request.contextPath}/${character.characterMainImg}" 
 			alt="キャラ画像" 
-			width="1000px" height="600px"
+			width="900px" height="550px"
 			>
 			<!-- 画像切り替え用の画像リスト -->
     		<div id="imageList" style="display: none;">
@@ -71,7 +71,7 @@
 	<a href="/f4/QrServlet" class="ank-center"></a>　<!-- QR（手紙） -->
 	<a href="/f4/EditServlet" class="ank-right"></a>　<!-- ペン -->
 	<a href="/f4/DeleteServlet" class="delete"><img src="images_back/clock.png" alt="削除"
-	width="200px" height="200px"></a>
+	width="180px" height="180px"></a>
 	</div>
 	
 
