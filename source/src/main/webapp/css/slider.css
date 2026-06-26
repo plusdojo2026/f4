@@ -118,9 +118,9 @@ form {
 }
 .send-btn {
     /* ボタンのサイズ（画像に合わせて調整してください） */
-    width: 200px;
-    height: 150px;
-    border-radius: 60px;
+    width: 300px;
+    height: 250px;
+    border-radius: 100px;
     
     /* ボタンの枠線や背景色を消す */
     background-color: transparent;
