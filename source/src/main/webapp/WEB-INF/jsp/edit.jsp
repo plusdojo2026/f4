@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>落書き｜ぱぱっとコミュ！</title>
+<title>ぱぱっとコミュ！｜落書き画面</title>
 <link rel="stylesheet" href="css/edit.css">
 </head>
 <body>
