@@ -99,6 +99,7 @@ body {
 .back{
 	position:absolute;
 	z-index: 1000;
-	bottom: 80px;
-	left: 770px;
+	bottom: 40px;
+	transform:translateX(-50%);
+	left: 50%;
 }
