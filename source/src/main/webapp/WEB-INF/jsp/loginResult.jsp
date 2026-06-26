@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ログイン結果画面</title>
+<title>ぱぱっとコミュ！｜ログイン結果画面</title>
 <link rel="stylesheet" href="css/loginResult.css">
 </head>
 <body>
